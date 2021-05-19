@@ -59,7 +59,6 @@ public class ShoppingCartItem extends AnchorPane {
     public void removeAllFromCart(){
         iMatDataHandler.getShoppingCart().clear();
         imatMainController.flowPane.getChildren().clear();
-
-
+        imatMainController.flowPane1.getChildren().clear();
     }
 }

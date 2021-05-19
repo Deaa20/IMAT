@@ -162,6 +162,8 @@ public class ImatMainController implements Initializable {
     @FXML FlowPane flowpay;
     @FXML Button pay;
     @FXML Label pricetot;
+    @FXML AnchorPane itemsAnchor1;
+    @FXML FlowPane flowPane1;
 
 
 
@@ -488,16 +490,20 @@ public class ImatMainController implements Initializable {
     @FXML
     public void setCartCards() {
         flowPane.getChildren().clear();
+        flowPane1.getChildren().clear();
         page_label.setText("Varukorg");
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
-            flowPane.getChildren().add(new ShoppingCartItem(
+            flowPane1.getChildren().add(new ShoppingCartItem(
                     iMatDataHandler, this, s.getProduct().getProductId()));
         }
-        setItemsFlow();
+        //setItemsFlow();
+        itemsAnchor1.toFront();
     }
 
     @FXML public void placeNow(){
         iMatDataHandler.placeOrder();
+        flowPane.getChildren().clear();
+        flowPane1.getChildren().clear();
         mainScen.toFront();
     }
 
