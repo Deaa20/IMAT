@@ -43,6 +43,7 @@ public class ImatMainController implements Initializable {
     @FXML
     Button hygein;
 
+
     @FXML
     Button add;
     @FXML
@@ -156,6 +157,11 @@ public class ImatMainController implements Initializable {
 
     @FXML
     Label ingaFav;
+
+    @FXML AnchorPane payscen;
+    @FXML FlowPane flowpay;
+    @FXML Button pay;
+    @FXML Label pricetot;
 
 
 
@@ -463,6 +469,40 @@ public class ImatMainController implements Initializable {
 
 
     }
+
+
+    public void getPayScen(Event event) {
+        payscen.toFront();
+
+        flowpay.getChildren().clear();
+        for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
+            flowpay.getChildren().add(new ShoppingCartItem(
+                    iMatDataHandler, this, s.getProduct().getProductId()));
+
+        }
+
+        pricetot.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+    }
+
+
+    @FXML
+    public void setCartCards() {
+        flowPane.getChildren().clear();
+        page_label.setText("Varukorg");
+        for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
+            flowPane.getChildren().add(new ShoppingCartItem(
+                    iMatDataHandler, this, s.getProduct().getProductId()));
+        }
+        setItemsFlow();
+    }
+
+    @FXML public void placeNow(){
+        iMatDataHandler.placeOrder();
+        mainScen.toFront();
+    }
+
+
+
   /*  @FXML
     public static void onClose(){
         iMatDataHandler.shutDown();

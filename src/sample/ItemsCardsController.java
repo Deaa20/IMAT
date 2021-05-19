@@ -106,6 +106,13 @@ public class ItemsCardsController extends AnchorPane {
     }
 
     @FXML
+    public void addToCart(){
+        //System.out.println("added!");
+        iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(id));
+        //System.out.println(iMatDataHandler.getShoppingCart().getTotal());
+    }
+
+    @FXML
     public void setFavoritItem() {
 
         System.out.println("#");

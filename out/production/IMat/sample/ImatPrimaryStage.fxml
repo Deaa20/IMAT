@@ -815,7 +815,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="772.0" layoutY="30.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Varukorgen">
+                        <Button layoutX="772.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setCartCards" prefHeight="41.0" prefWidth="181.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Varukorgen">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -842,11 +842,6 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <ImageView fitHeight="43.0" fitWidth="51.0" layoutX="1133.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/Close-512.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
