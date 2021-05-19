@@ -25,16 +25,264 @@
    <children>
       <StackPane prefHeight="745.0" prefWidth="1188.0">
          <children>
+            <AnchorPane fx:id="kontoUppgifterScen" prefHeight="742.0" prefWidth="1191.0">
+               <children>
+                  <AnchorPane layoutX="1.0" layoutY="-3.0" prefHeight="751.0" prefWidth="1191.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Line endX="-93.0" endY="630.6666870117188" layoutX="599.0" layoutY="42.0" startX="-92.99996948242188" startY="84.5" />
+                        <Label fx:id="namn" layoutX="94.0" layoutY="202.0" prefHeight="34.0" prefWidth="111.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="personnummer" layoutX="222.0" layoutY="262.0" prefHeight="34.0" prefWidth="253.0" styleClass="input-box" text="***********">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="telefonNummer" layoutX="222.0" layoutY="320.0" prefHeight="34.0" prefWidth="253.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="epostAdress" layoutX="222.0" layoutY="380.0" prefHeight="34.0" prefWidth="253.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="adress" layoutX="124.0" layoutY="496.0" prefHeight="34.0" prefWidth="347.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="506.0" prefHeight="27.0" prefWidth="97.0" text="Adress:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label fx:id="efterNamn" layoutX="337.0" layoutY="202.0" prefHeight="34.0" prefWidth="159.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="kortNummer" layoutX="702.0" layoutY="202.0" prefHeight="27.0" prefWidth="277.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="giltigTillYear" layoutX="700.0" layoutY="256.0" prefHeight="17.0" prefWidth="127.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="giltigTillMount" layoutX="854.0" layoutY="256.0" prefHeight="17.0" prefWidth="127.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cvv" layoutX="702.0" layoutY="333.0" prefHeight="27.0" prefWidth="269.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="korthållare" layoutX="702.0" layoutY="410.0" prefHeight="17.0" prefWidth="277.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="527.0" layoutY="256.0" prefHeight="27.0" prefWidth="143.0" text="Giltig till:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="527.0" layoutY="410.0" prefHeight="27.0" prefWidth="143.0" text="Korthållare:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="531.0" layoutY="202.0" prefHeight="27.0" prefWidth="150.0" text="KortNummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="272.0" text="Perssonnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="330.0" text="Telefonnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="390.0" prefHeight="27.0" prefWidth="181.0" text="Epost-adress:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label fx:id="postNummer" layoutX="186.0" layoutY="546.0" prefHeight="34.0" prefWidth="295.0" styleClass="input-box">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="546.0" prefHeight="27.0" prefWidth="159.0" text="Postnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="205.0" prefHeight="27.0" prefWidth="79.0" text="Namn:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label layoutX="210.0" layoutY="205.0" prefHeight="27.0" prefWidth="127.0" text="Efternamn:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Button layoutX="990.0" layoutY="665.0" mnemonicParsing="false" onMouseClicked="#setChangeKontoUppgifterScen" prefHeight="65.0" prefWidth="173.0" style="-fx-background-color: #5697EF;" text="Ändra...">
+                           <font>
+                              <Font name="Arial Bold Italic" size="17.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER_RIGHT" layoutX="527.0" layoutY="335.0" prefHeight="27.0" prefWidth="143.0" text="CVV:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.5686274766921997" green="0.3294117748737335" blue="0.3843137323856354" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Line endX="1080.3333740234375" layoutX="111.0" layoutY="126.0" startX="-104.0000228881836" />
+                        <Label alignment="CENTER" layoutX="161.0" layoutY="134.0" prefHeight="29.0" prefWidth="197.0" text="Person Uppgifter">
+                           <font>
+                              <Font name="Arial Black" size="20.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="41.52" radius="15.13">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="708.0" layoutY="135.0" prefHeight="29.0" prefWidth="277.0" text="Betalningskort Uppgifter">
+                           <font>
+                              <Font name="Arial Black" size="20.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="41.52" radius="15.13">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                        <Button layoutX="979.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#getMainScen" prefHeight="65.0" prefWidth="173.0" style="-fx-background-color: #5697EF;" text="Home">
+                           <font>
+                              <Font name="Arial Bold Italic" size="17.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="349.0" layoutY="30.0" prefHeight="65.0" prefWidth="435.0" text="Konto Uppgifter">
+                           <font>
+                              <Font name="Arial Black" size="31.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="98.85" radius="45.769999999999996" width="86.23">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane prefHeight="662.0" prefWidth="1131.0">
                <children>
-                  <AnchorPane layoutY="103.0" prefHeight="647.0" prefWidth="1190.0" style="-fx-background-color: #000000;">
+                  <AnchorPane layoutY="91.0" prefHeight="656.0" prefWidth="1191.0" style="-fx-background-color: #000000;">
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                      <children>
                         <ScrollPane layoutX="3.0" prefHeight="647.0" prefWidth="1187.0">
                            <content>
-                              <AnchorPane prefHeight="1376.0" prefWidth="1195.0" style="-fx-background-color: #FFFFFF;">
+                              <AnchorPane prefHeight="1391.0" prefWidth="1195.0" style="-fx-background-color: #FFFFFF;">
                                  <children>
                                     <Circle fill="WHITE" layoutX="111.0" layoutY="510.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9aefa2" height="421.0" layoutX="97.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
@@ -123,46 +371,225 @@
             </AnchorPane>
             <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
-                  <AnchorPane layoutX="317.0" layoutY="123.0" prefHeight="349.0" prefWidth="628.0" style="-fx-background-color: #ffffff;">
+                  <AnchorPane layoutX="240.0" layoutY="136.0" prefHeight="449.0" prefWidth="741.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0">
                      <children>
-                        <ImageView fx:id="cardImage" fitHeight="200.0" fitWidth="197.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label fx:id="detInfoPris" layoutX="14.0" layoutY="254.0" prefHeight="43.0" prefWidth="143.0" text="Label" />
-                        <Button layoutX="464.0" layoutY="289.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Button">
-                           <effect>
-                              <InnerShadow height="111.94" radius="65.8475" width="153.45">
-                                 <color>
-                                    <Color red="0.21176470816135406" green="0.20000000298023224" blue="0.5686274766921997" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
+                        <ImageView fx:id="cardImage" fitHeight="207.0" fitWidth="214.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="detInfoPris" layoutX="14.0" layoutY="306.0" prefHeight="43.0" prefWidth="143.0">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font></Label>
+                        <Button layoutX="595.0" layoutY="386.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" style="-fx-background-color: #5697ef;" text="Lägga till">
                            <font>
                               <Font size="15.0" />
-                           </font></Button>
-                        <Label fx:id="antalLabel" layoutX="303.0" layoutY="262.0" prefHeight="27.0" prefWidth="51.0" text="Label" />
-                        <ImageView fx:id="plus" fitHeight="27.0" fitWidth="27.0" layoutX="269.0" layoutY="257.0" onMouseClicked="#plusAntal" pickOnBounds="true" preserveRatio="true">
+                           </font>
+                        </Button>
+                        <Label fx:id="antalLabel" layoutX="355.0" layoutY="309.0" prefHeight="27.0" prefWidth="51.0" text="Label" />
+                        <ImageView fx:id="plus" fitHeight="27.0" fitWidth="27.0" layoutX="393.0" layoutY="309.0" onMouseClicked="#plusAntal" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../pic/plus.png" />
+                              <Image url="@../pic/unknown.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="346.0" layoutY="257.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="322.0" layoutY="309.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../pic/minus.png" />
+                              <Image url="@../pic/unknown44.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="563.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="686.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/Close-512.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="antal" layoutX="228.0" layoutY="18.0" prefHeight="200.0" prefWidth="324.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true" />
+                        <Label fx:id="antal" alignment="TOP_RIGHT" contentDisplay="TOP" layoutX="269.0" layoutY="7.0" prefHeight="247.0" prefWidth="408.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true">
+                           <font>
+                              <Font name="Arial Italic" size="17.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></Label>
                      </children>
-                     <effect>
-                        <InnerShadow height="119.84" radius="62.3825" width="131.69">
-                           <color>
-                              <Color red="0.9843137264251709" />
-                           </color>
-                        </InnerShadow>
-                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="changeKontoUppgifterScen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(0,0,0,0.75);">
+               <children>
+                  <AnchorPane layoutX="114.0" layoutY="103.0" prefHeight="584.0" prefWidth="988.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="59.0" layoutY="332.0" prefHeight="27.0" prefWidth="97.0" text="Adress:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="99.0" prefHeight="27.0" prefWidth="143.0" text="Giltig till:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="249.0" prefHeight="27.0" prefWidth="143.0" text="Korthållare:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="36.0" prefHeight="27.0" prefWidth="150.0" text="KortNummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="98.0" text="Perssonnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="156.0" text="Telefonnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="216.0" prefHeight="27.0" prefWidth="181.0" text="Epost-adress:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="372.0" prefHeight="27.0" prefWidth="159.0" text="Postnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="31.0" prefHeight="27.0" prefWidth="79.0" text="Namn:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="210.0" layoutY="31.0" prefHeight="27.0" prefWidth="127.0" text="Efternamn:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="174.0" prefHeight="27.0" prefWidth="143.0" text="CVV:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="namnKonto" layoutX="94.0" layoutY="32.0" prefHeight="25.0" prefWidth="111.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="efterNamnKonto" layoutX="337.0" layoutY="32.0" prefHeight="25.0" prefWidth="111.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="perssonnummerKonto" layoutX="218.0" layoutY="99.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="telefonnummerKonto" layoutX="218.0" layoutY="157.0" onKeyReleased="#changeTelefonNummer" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="epostAdressKonto" layoutX="218.0" layoutY="217.0" onKeyReleased="#changeEmail" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="adressKonto" layoutX="164.0" layoutY="333.0" onKeyReleased="#changeAdress" prefHeight="25.0" prefWidth="295.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="postnummerKonto" layoutX="168.0" layoutY="373.0" onKeyReleased="#changePostNummer" prefHeight="25.0" prefWidth="105.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="KortnummerKonto" layoutX="694.0" layoutY="37.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="giltigTillYearKonto" layoutX="698.0" layoutY="100.0" prefHeight="25.0" prefWidth="97.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="cvvKonto" layoutX="698.0" layoutY="174.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="korthållareKonto" layoutX="698.0" layoutY="250.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <Button layoutX="795.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#updateKontoInfo" prefHeight="65.0" prefWidth="127.0" style="-fx-background-color: #5697ef;" text="Spara">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="closeChangeKontoUpp" fitHeight="41.0" fitWidth="41.0" layoutX="933.0" layoutY="11.0" onMouseClicked="#setKontoUppgifterScen" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="giltigTillMonthKonto" layoutX="824.0" layoutY="99.0" prefHeight="25.0" prefWidth="97.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <Label fx:id="cvvError" layoutX="503.0" layoutY="221.0" prefHeight="17.0" prefWidth="429.0" />
+                        <Label fx:id="giltigError" layoutX="503.0" layoutY="139.0" prefHeight="17.0" prefWidth="429.0" />
+                     </children>
                   </AnchorPane>
                </children>
             </AnchorPane>
@@ -170,16 +597,9 @@
                <children>
                   <SplitPane dividerPositions="0.15605749486652978" layoutX="-6.0" layoutY="95.0" prefHeight="649.0" prefWidth="1196.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="662.0" prefWidth="183.0" style="-fx-background-color: #ffffff;" styleClass="background">
                            <children>
-                              <Button fx:id="mejeri" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Mejeri">
-                                 <effect>
-                                    <InnerShadow height="183.29" radius="85.16749999999999" width="159.38">
-                                       <color>
-                                          <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                       </color>
-                                    </InnerShadow>
-                                 </effect>
+                              <Button fx:id="mejeri" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Mejeri">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
@@ -187,14 +607,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="chark" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Chark">
-                                 <effect>
-                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
-                                       <color>
-                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
-                                       </color>
-                                    </InnerShadow>
-                                 </effect>
+                              <Button fx:id="chark" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Chark">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
@@ -202,14 +615,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="grönsaker" layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Grönsaker    &amp; Frukt" wrapText="true">
-                                 <effect>
-                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
-                                       <color>
-                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
-                                       </color>
-                                    </InnerShadow>
-                                 </effect>
+                              <Button fx:id="grönsaker" layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Grönsaker    &amp; Frukt" wrapText="true">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
@@ -217,14 +623,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="bröd" layoutX="37.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#breadFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Bröd">
-                                 <effect>
-                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
-                                       <color>
-                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
-                                       </color>
-                                    </InnerShadow>
-                                 </effect>
+                              <Button fx:id="bröd" layoutX="37.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#breadFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Bröd">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
@@ -232,14 +631,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="kryddor" layoutX="37.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#kryddorFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Kryddor">
-                                 <effect>
-                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
-                                       <color>
-                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
-                                       </color>
-                                    </InnerShadow>
-                                 </effect>
+                              <Button fx:id="kryddor" layoutX="37.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#kryddorFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Kryddor">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
@@ -247,14 +639,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="godis" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#sweetFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="godis">
-                                 <effect>
-                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
-                                       <color>
-                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
-                                       </color>
-                                    </InnerShadow>
-                                 </effect>
+                              <Button fx:id="godis" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#sweetFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="godis">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
@@ -262,14 +647,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#dryckFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Dryck">
-                                 <effect>
-                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
-                                       <color>
-                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
-                                       </color>
-                                    </InnerShadow>
-                                 </effect>
+                              <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#dryckFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Dryck">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
@@ -278,55 +656,140 @@
                                  </cursor>
                               </Button>
                            </children>
-                           <effect>
-                              <InnerShadow choke="0.09" height="160.37" radius="103.3425" width="255.0">
-                                 <color>
-                                    <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="655.0" prefWidth="1004.0">
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                              <ScrollPane fitToWidth="true" layoutY="44.0" prefHeight="610.0" prefWidth="997.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.topAnchor="44.0">
-                                 <content>
-                                    <FlowPane fx:id="flowPane" prefHeight="593.0" prefWidth="995.0">
-                                       <children>
-                                          <AmbientLight>
+                            <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <ScrollPane fitToWidth="true" layoutY="44.0" prefHeight="606.0" prefWidth="1018.0" style="-fx-background-color: £ffffff;" AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="44.0">
+                                       <content>
+                                          <FlowPane fx:id="flowPane" prefHeight="602.0" prefWidth="1015.0">
+                                             <children>
+                                                <AmbientLight>
+                                                   <color>
+                                                      <Color red="0.7631579041481018" green="0.03768680989742279" blue="0.03768680989742279" />
+                                                   </color>
+                                                </AmbientLight>
+                                             </children>
+                                          </FlowPane>
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="page_label" prefHeight="43.0" prefWidth="277.0" text="Label">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
                                              <color>
-                                                <Color red="0.7631579041481018" green="0.03768680989742279" blue="0.03768680989742279" />
+                                                <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
                                              </color>
-                                          </AmbientLight>
-                                       </children>
-                                    </FlowPane>
-                                 </content>
-                              </ScrollPane>
-                              <Label fx:id="page_label" prefHeight="43.0" prefWidth="277.0" text="Label">
-                                 <font>
-                                    <Font size="26.0" />
-                                 </font>
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </Label>
-                              <TextField fx:id="searchFilter" layoutX="317.0" layoutY="2.0" onKeyTyped="#setSearchFilter" prefHeight="27.0" prefWidth="680.0" promptText="Sök här">
-                                 <effect>
-                                    <DropShadow height="38.79" radius="36.1925" width="107.98">
-                                       <color>
-                                          <Color red="0.01666666753590107" blue="1.0" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </TextField>
+                                          </DropShadow>
+                                       </effect>
+                                    </Label>
+                                    <TextField fx:id="searchFilter" layoutX="317.0" layoutY="2.0" onKeyTyped="#setSearchFilter" prefHeight="27.0" prefWidth="680.0" promptText="Sök här">
+                                       <effect>
+                                          <DropShadow height="38.79" radius="36.1925" width="107.98">
+                                             <color>
+                                                <Color red="0.01666666753590107" blue="1.0" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="homeAnchor" prefHeight="619.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" layoutX="179.0" prefHeight="99.0" prefWidth="576.0" text="Välkomen till IMAT">
+                                       <font>
+                                          <Font name="Arial Bold" size="55.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="91.18" radius="46.8175" width="98.09">
+                                             <color>
+                                                <Color red="0.33725491166114807" green="0.5921568870544434" blue="0.9372549057006836" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Label>
+                                    <Label layoutX="163.0" layoutY="86.0" text="Börja handla genom att trycka på önskade kategori  till vänster">
+                                       <font>
+                                          <Font name="Arial Italic" size="22.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="84.26" radius="45.087500000000006" width="98.09">
+                                             <color>
+                                                <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Label>
+                                    <ImageView fitHeight="108.0" fitWidth="105.0" layoutX="43.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 20;">
+                                       <image>
+                                          <Image url="@../pic/curve-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="2.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697EF;" stylesheets="@button.css" text="Favorita varor">
+                                       <font>
+                                          <Font name="Arial Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Line endX="901.0" endY="3.0517578125E-5" layoutX="110.0" layoutY="216.0" startX="-100.0" />
+                                    <Label layoutX="289.0" layoutY="117.0" prefHeight="73.0" prefWidth="167.0" text="Snabb">
+                                       <font>
+                                          <Font name="Arial Black" size="25.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="91.18" radius="46.8175" width="98.09">
+                                             <color>
+                                                <Color red="0.33725491166114807" green="0.5921568870544434" blue="0.9372549057006836" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Label>
+                                    <Label layoutX="497.0" layoutY="119.0" prefHeight="70.0" prefWidth="150.0" text="Säkert">
+                                       <font>
+                                          <Font name="Arial Black" size="25.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="91.18" radius="46.8175" width="98.09">
+                                             <color>
+                                                <Color red="0.33725491166114807" green="0.5921568870544434" blue="0.9372549057006836" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Label>
+                                    <Label layoutX="697.0" layoutY="129.0" prefHeight="53.0" prefWidth="173.0" text="Hög kvalitet">
+                                       <font>
+                                          <Font name="Arial Black" size="25.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="91.18" radius="46.8175" width="98.09">
+                                             <color>
+                                                <Color red="0.33725491166114807" green="0.5921568870544434" blue="0.9372549057006836" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Label>
+                                    <ScrollPane layoutX="2.0" layoutY="282.0" prefHeight="364.0" prefWidth="1018.0">
+                                       <content>
+                                          <FlowPane fx:id="startFlow" prefHeight="365.0" prefWidth="1002.0" />
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="ingaFav" alignment="CENTER" layoutX="214.0" layoutY="210.0" prefHeight="65.0" prefWidth="747.0" text="Det finns inga favorita varor">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
                            </children>
-                        </AnchorPane>
+                        </StackPane>
                     </items>
                   </SplitPane>
-                  <AnchorPane layoutY="-4.0" prefHeight="99.0" prefWidth="1190.0" styleClass="background">
+                  <AnchorPane layoutY="-4.0" prefHeight="99.0" prefWidth="1194.0" style="-fx-background-color: #4f4f4f;" styleClass="background">
                      <children>
                         <ImageView fitHeight="88.0" fitWidth="111.0" focusTraversable="true" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -336,14 +799,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Button layoutX="152.0" layoutY="34.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="89.0" stylesheets="@button.css" text="Home">
-                           <effect>
-                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
+                        <Button fx:id="setHome" layoutX="152.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#setHome" prefHeight="43.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -351,14 +807,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                      <Button layoutX="1032.0" layoutY="29.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="143.0" styleClass="background" stylesheets="@button.css" text="Konto">
-                           <effect>
-                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
+                      <Button fx:id="konto" layoutX="964.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setKontoUppgifterScen" prefHeight="41.0" prefWidth="143.0" style="-fx-background-color: #5697ef;" styleClass="background" stylesheets="@button.css" text="Konto">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -366,14 +815,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="840.0" layoutY="29.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" stylesheets="@button.css" text="Varukorgen">
-                           <effect>
-                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
+                        <Button layoutX="772.0" layoutY="30.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Varukorgen">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -381,14 +823,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="historik" alignment="CENTER" layoutX="466.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="43.0" prefWidth="167.0" stylesheets="@button.css" text="Historik">
-                           <effect>
-                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
+                        <Button fx:id="historik" alignment="CENTER" layoutX="398.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="43.0" prefWidth="167.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -399,14 +834,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="653.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" stylesheets="@button.css" text="Favorit">
-                           <effect>
-                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
+                        <Button layoutX="585.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Favorit">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -415,13 +843,6 @@
                            </cursor>
                         </Button>
                      </children>
-                     <effect>
-                        <InnerShadow choke="0.04" height="176.92" radius="107.47999999999999" width="255.0">
-                           <color>
-                              <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-                           </color>
-                        </InnerShadow>
-                     </effect>
                   </AnchorPane>
                </children>
             </AnchorPane>

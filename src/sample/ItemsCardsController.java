@@ -124,6 +124,7 @@ public class ItemsCardsController extends AnchorPane {
             iMatDataHandler.addFavorite(iMatDataHandler.getProduct(id));
             favoritLabel.setText("Favorit");
 
+
             System.out.println("2");
 
         }

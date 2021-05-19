@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application
 {
+    ImatMainController imatMainController;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -17,7 +18,14 @@ public class Main extends Application
         primaryStage.setTitle("IMAT");
         primaryStage.setScene(new Scene(root, 1188, 735));
         primaryStage.show();
+        primaryStage.setOnCloseRequest(event -> {
+            System.out.println("Stage is closing");
+            ImatMainController.iMatDataHandler.shutDown();
+        });
+
+
     }
+
 
 
 

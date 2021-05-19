@@ -15,33 +15,12 @@
       <Label fx:id="productName" layoutX="19.0" layoutY="159.0" prefHeight="30.0" prefWidth="134.0" text="Label">
          <font>
             <Font name="Arial Bold" size="15.0" />
-         </font>
-         <effect>
-            <InnerShadow>
-               <color>
-                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-               </color>
-            </InnerShadow>
-         </effect></Label>
+         </font></Label>
       <Label fx:id="productPrice" layoutX="19.0" layoutY="207.0" prefHeight="30.0" prefWidth="134.0" text="Label">
          <font>
             <Font name="Arial Bold" size="15.0" />
-         </font>
-         <effect>
-            <InnerShadow>
-               <color>
-                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-               </color>
-            </InnerShadow>
-         </effect></Label>
-      <Button fx:id="merInfo" layoutX="189.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#infoHandler" prefHeight="30.0" prefWidth="73.0" text="Mer info">
-         <effect>
-            <InnerShadow height="119.84" radius="59.42" width="119.84">
-               <color>
-                  <Color red="0.21176470816135406" green="0.20000000298023224" blue="0.5686274766921997" />
-               </color>
-            </InnerShadow>
-         </effect>
+         </font></Label>
+      <Button fx:id="merInfo" layoutX="189.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#infoHandler" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #5697EF;" text="Mer info">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -65,28 +44,21 @@
             </InnerShadow>
          </effect>
       </Label>
-      <ImageView fx:id="ecoImage" fitHeight="49.0" fitWidth="63.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="189.0" layoutY="207.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" text="Lägg till">
-         <effect>
-            <InnerShadow height="119.84" radius="59.42" width="119.84">
-               <color>
-                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-               </color>
-            </InnerShadow>
-         </effect>
+      <ImageView fx:id="ecoImage" fitHeight="38.0" fitWidth="44.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="189.0" layoutY="207.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #f48787;" text="Lägg till">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.95686274766922" green="0.529411792755127" blue="0.529411792755127" />
+               </color>
+            </InnerShadow>
+         </effect>
       </Button>
    </children>
-   <effect>
-      <InnerShadow choke="0.06" height="115.89" radius="45.582499999999996" width="68.44">
-         <color>
-            <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-         </color>
-      </InnerShadow>
-   </effect>
 </fx:root>
