@@ -9,15 +9,23 @@ import javafx.stage.Stage;
 
 public class Main extends Application
 {
+    ImatMainController imatMainController;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("ImatPrimaryStage.fxml"));
         primaryStage.setTitle("IMAT");
-        primaryStage.setScene(new Scene(root, 1000, 1000));
+        primaryStage.setScene(new Scene(root, 1188, 735));
         primaryStage.show();
+        primaryStage.setOnCloseRequest(event -> {
+            System.out.println("Stage is closing");
+            ImatMainController.iMatDataHandler.shutDown();
+        });
+
+
     }
+
 
 
 
