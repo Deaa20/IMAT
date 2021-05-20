@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.awt.*;
 import java.io.IOException;
@@ -49,7 +50,17 @@ public class ShoppingCartItem extends AnchorPane {
 
         image.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         name.setText(iMatDataHandler.getProduct(id).getName());
-        price.setText(iMatDataHandler.getProduct(id).getPrice() + "kr");
+
+        for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
+            if (shoppingItem.getProduct().equals(iMatDataHandler.getProduct(id))) {
+                System.out.println(shoppingItem.getAmount());
+                System.out.println(shoppingItem.getTotal() + "total");
+                price.setText((iMatDataHandler.getProduct(id).getPrice() * shoppingItem.getAmount()) + "");
+
+
+            }
+        }
+       // price.setText(iMatDataHandler.getShoppingCart().getPrice()+ "kr");
         //from.setText(iMatDataHandler.getProduct(id).get);
     }
 

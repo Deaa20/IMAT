@@ -2,12 +2,14 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
-import java.awt.*;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,7 +45,7 @@ Order order;
                                     ImatMainController imatMainController,
                                     Order order){
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource
-            ("historikCardsController.fxml"));
+            ("historikCards.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -60,16 +62,17 @@ Order order;
 
         setDatum();
         totPris.setText(setTotPris()+"");
-        antalVaror.setText(setAntalVaror()+"");
+       // antalVaror.setText(setAntalVaror()+"");
         orderNummer.setText(order.getOrderNumber()+"");
 
 
 }
 
 private void setDatum(){
-    SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+    SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
     Date date = new Date(System.currentTimeMillis());
     datum.setText(formatter.format(date));
+    order.setDate(date);
 }
 private double setTotPris(){
         double price=0;
@@ -85,6 +88,12 @@ private int setAntalVaror(){
         antalVaror++;
     }
     return antalVaror;
+}
+@FXML
+private  void setHistoDetButton(){
+        imatMainController.setHistoDet(order,setTotPris());
+
+
 }
 
 

@@ -21,7 +21,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
+<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
       <StackPane prefHeight="745.0" prefWidth="1188.0">
          <children>
@@ -831,17 +831,6 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="historik" alignment="CENTER" layoutX="398.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="43.0" prefWidth="167.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <font>
-                              <Font name="Arial Bold" size="14.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
                         <Button layoutX="585.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Favorit">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
@@ -850,6 +839,62 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <Button layoutX="403.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
+               <children>
+                  <AnchorPane layoutX="139.0" layoutY="99.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="orderNummerDet" layoutX="199.0" layoutY="11.0" prefHeight="35.0" prefWidth="113.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="763.0" layoutY="491.0" text="Tot.Pris">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="datumDet" layoutX="429.0" layoutY="11.0" prefHeight="35.0" prefWidth="230.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="23.0" layoutY="11.0" text="Order Nummer">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totPrisDet" layoutX="875.0" layoutY="491.0" prefHeight="35.0" prefWidth="113.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane layoutX="4.0" layoutY="58.0" prefHeight="407.0" prefWidth="988.0">
+                           <content>
+                              <FlowPane fx:id="histoFlow" prefHeight="393.0" prefWidth="981.0" />
+                           </content>
+                        </ScrollPane>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="968.0" layoutY="9.0" onMouseClicked="#setHistDetBack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
