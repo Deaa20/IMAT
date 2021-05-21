@@ -126,7 +126,7 @@ public class ItemsCardsController extends AnchorPane {
         System.out.println("hello");
         parentController.getInfoScen();
         parentController.cardImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
-        parentController.detInfoPris.setText(productPrice.getText()+iMatDataHandler.getProduct(id).getUnit());
+        parentController.detInfoPris.setText(productPrice.getText());
 
     }
 
