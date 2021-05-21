@@ -601,8 +601,6 @@ public class ImatMainController implements Initializable {
         histoDet.toFront();
         for(ShoppingItem s: order.getItems()) {
             histoFlow.getChildren().add(itemsCardsController= new ItemsCardsController(iMatDataHandler,this,s.getProduct().getProductId(), true));
-            itemsCardsController.amount.setText((int)(s.getAmount())+" st");
-            itemsCardsController.totPrisLebel.setText(s.getTotal()+" kr");
         }
         orderNummerDet.setText(order.getOrderNumber()+"");
         datumDet.setText(formatter.format(order.getDate()));
