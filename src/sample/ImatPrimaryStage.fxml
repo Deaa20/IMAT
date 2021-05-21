@@ -765,7 +765,7 @@
                               </AnchorPane>
                             <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
                                  <children>
-                                    <ScrollPane fitToWidth="true" layoutY="104.0" prefHeight="471.0" prefWidth="1018.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="72.0" AnchorPane.topAnchor="104.0">
+                                    <ScrollPane fitToWidth="true" layoutX="6.0" layoutY="104.0" prefHeight="471.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="72.0" AnchorPane.topAnchor="104.0">
                                        <content>
                                           <FlowPane fx:id="flowPane" prefHeight="539.0" prefWidth="1003.0" />
                                        </content>

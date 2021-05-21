@@ -195,12 +195,12 @@ public class ImatMainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
        // flowPane.setPrefWrapLength(2);
-       flowPane.setHgap(7);
-        flowPane.setVgap(7);
-        startFlow.setVgap(7);
-        startFlow.setHgap(7);
-        histoFlow.setHgap(7);
-        histoFlow.setVgap(7);
+       flowPane.setHgap(20);
+        flowPane.setVgap(20);
+        startFlow.setVgap(20);
+        startFlow.setHgap(20);
+        histoFlow.setHgap(20);
+        histoFlow.setVgap(20);
         antalLabel.setText(antalInt+"");
         setHome();
 
