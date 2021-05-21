@@ -20,7 +20,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
+<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
       <StackPane prefHeight="745.0" prefWidth="1188.0">
          <children>
@@ -765,49 +765,35 @@
                               </AnchorPane>
                             <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
                                  <children>
-                                    <ScrollPane fitToWidth="true" layoutY="44.0" prefHeight="548.0" prefWidth="1018.0" style="-fx-background-color: £ffffff;" AnchorPane.bottomAnchor="55.0" AnchorPane.topAnchor="44.0">
+                                    <ScrollPane fitToWidth="true" layoutY="104.0" prefHeight="471.0" prefWidth="1018.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="72.0" AnchorPane.topAnchor="104.0">
                                        <content>
-                                          <FlowPane fx:id="flowPane" prefHeight="556.0" prefWidth="1015.0" />
+                                          <FlowPane fx:id="flowPane" prefHeight="539.0" prefWidth="1003.0" />
                                        </content>
                                     </ScrollPane>
-                                    <Label fx:id="page_label" prefHeight="43.0" prefWidth="277.0" text="Label">
+                                    <Label fx:id="page_label" layoutX="10.0" layoutY="60.0" prefHeight="43.0" prefWidth="277.0" text="Label">
                                        <font>
-                                          <Font size="26.0" />
+                                          <Font name="System Bold" size="26.0" />
                                        </font>
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
                                     </Label>
-                                    <TextField fx:id="searchFilter" layoutX="309.0" layoutY="5.0" onKeyTyped="#setSearchFilter" prefHeight="1.0" prefWidth="685.0" promptText="Sök här...">
-                                       <effect>
-                                          <DropShadow height="38.79" radius="36.1925" width="107.98">
-                                             <color>
-                                                <Color red="0.01666666753590107" blue="1.0" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
+                                    <TextField fx:id="searchFilter" layoutX="234.0" layoutY="14.0" onKeyTyped="#setSearchFilter" prefHeight="34.0" prefWidth="758.0" promptText="Sök här...">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </TextField>
-                                    <Button fx:id="betalaLabel" alignment="TOP_LEFT" layoutX="705.0" layoutY="592.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="53.0" prefWidth="127.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
+                                    <Button fx:id="betalaLabel" alignment="CENTER" layoutX="705.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
                                        <font>
-                                          <Font name="Arial Bold" size="26.0" />
+                                          <Font name="Arial Bold" size="20.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <Label fx:id="totPriceVaro" layoutX="864.0" layoutY="599.0" prefHeight="34.0" prefWidth="113.0">
+                                    <Label fx:id="totPriceVaro" layoutX="864.0" layoutY="595.0" prefHeight="34.0" prefWidth="113.0" text="kr">
                                        <font>
                                           <Font name="Arial Bold" size="21.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="tömmaVarukorgen" layoutX="14.0" layoutY="594.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="43.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
+                                    <Button fx:id="tömmaVarukorgen" alignment="CENTER" layoutX="15.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="40.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
                                        <font>
                                           <Font name="Arial Bold" size="18.0" />
                                        </font>
@@ -820,7 +806,7 @@
                   </SplitPane>
                   <AnchorPane layoutY="-4.0" prefHeight="99.0" prefWidth="1194.0" style="-fx-background-color: #4f4f4f;" styleClass="background">
                      <children>
-                        <ImageView fitHeight="88.0" fitWidth="111.0" focusTraversable="true" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="88.0" fitWidth="111.0" focusTraversable="true" layoutX="36.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/bc4aff251fec4dd5b321f2603f907db6.png" />
                            </image>
@@ -828,7 +814,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Button fx:id="setHome" alignment="BASELINE_LEFT" layoutX="152.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#setHome" prefHeight="43.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
+                        <Button fx:id="setHome" alignment="BASELINE_LEFT" layoutX="184.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setHome" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
                            <font>
                               <Font name="Arial Bold" size="21.0" />
                            </font>
@@ -836,7 +822,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                      <Button fx:id="konto" alignment="BASELINE_LEFT" layoutX="964.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setKontoUppgifterScen" prefHeight="41.0" prefWidth="143.0" style="-fx-background-color: #5697ef;" styleClass="background" stylesheets="@button.css" text="Konto">
+                      <Button fx:id="konto" alignment="BASELINE_LEFT" layoutX="1016.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setKontoUppgifterScen" prefHeight="50.0" prefWidth="143.0" style="-fx-background-color: #5697ef;" styleClass="background" stylesheets="@button.css" text="Konto">
                            <font>
                               <Font name="Arial Bold" size="21.0" />
                            </font>
@@ -844,7 +830,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="772.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setCartCards" prefHeight="41.0" prefWidth="181.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Varukorgen">
+                        <Button alignment="BASELINE_LEFT" layoutX="812.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setCartCards" prefHeight="50.0" prefWidth="181.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Varukorgen">
                            <font>
                               <Font name="Arial Bold" size="21.0" />
                            </font>
@@ -852,7 +838,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="585.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Favorit">
+                        <Button alignment="BASELINE_LEFT" layoutX="615.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="50.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Favorit">
                            <font>
                               <Font name="Arial Bold" size="21.0" />
                            </font>
@@ -860,7 +846,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="TEXT_ONLY" layoutX="387.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="41.0" prefWidth="189.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
+                        <Button alignment="BASELINE_LEFT" contentDisplay="TEXT_ONLY" layoutX="404.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
                            <font>
                               <Font name="Arial Bold" size="21.0" />
                            </font>
@@ -868,27 +854,27 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="533.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="544.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/document.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="715.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="742.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/star%20(2).png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="910.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="948.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/shopping-cart.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="1061.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="1113.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/user.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="244.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="272.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/home.png" />
                            </image>

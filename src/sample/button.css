@@ -1,19 +1,19 @@
 .background{
 
--fx-background-color: #ffffff
+-fx-background-color: #ffffff;
 }
 .button
 {
--fx-background-color: #ffffff
+-fx-background-color: #ffffff;
 }
 .card-stext{
 
--fx-font-color: #ffffff
+-fx-font-color: #ffffff;
 }
 
-.input-box{
+.input-box {
 
--fx-border-color: #000000 ;
-  -fx-border-width: 1;
+    -fx-border-color: #000000 ;
+    -fx-border-width: 1;
 
 }
