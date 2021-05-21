@@ -197,7 +197,7 @@ public class ItemsCardsController extends AnchorPane {
             } else if (!iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))) {
                 favorit.setImage(imageFilled);
                 iMatDataHandler.addFavorite(iMatDataHandler.getProduct(id));
-                
+
 
 
                 System.out.println("2");
