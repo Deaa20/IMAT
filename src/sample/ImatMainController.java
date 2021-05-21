@@ -552,16 +552,16 @@ public class ImatMainController implements Initializable {
         totPriceVaro.setVisible(true);
         tömmaVarukorgen.setVisible(true);
         totPriceVaro.setText(iMatDataHandler.getShoppingCart().getTotal()+ " kr");
-        ItemsCardsController itemsCardsController;
+        ShoppingCartItem shoppingCartItem;
         antal.setVisible(true);
         flowPane.getChildren().clear();
 
         page_label.setText("Varukorg");
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
-            flowPane.getChildren().add(itemsCardsController=new ItemsCardsController(
-                    iMatDataHandler, this, s.getProduct().getProductId(), true));
-            itemsCardsController.amount.setText(+(int)(s.getAmount())+" st");
-            itemsCardsController.totPrisLebel.setText(s.getTotal()+" kr");
+            flowPane.getChildren().add(shoppingCartItem=new ShoppingCartItem(
+                    iMatDataHandler, this, s.getProduct().getProductId()));
+            shoppingCartItem.amount.setText(+(int)(s.getAmount())+" st");
+            shoppingCartItem.totPris.setText(s.getTotal()+" kr");
 
         }
        setItemsFlow();

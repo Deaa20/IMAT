@@ -30,6 +30,14 @@ public class ShoppingCartItem extends AnchorPane {
     Label weight;
     @FXML
     Label amount;
+    @FXML
+    Label totPris;
+    @FXML Label amountChangeable;
+
+    @FXML ImageView plusImage;
+    @FXML ImageView minusImage;
+
+    int antalInt =1;
 
     public ShoppingCartItem(IMatDataHandler iMatDataHandler,
                                    ImatMainController imatMainController,
@@ -71,5 +79,20 @@ public class ShoppingCartItem extends AnchorPane {
         iMatDataHandler.getShoppingCart().clear();
         imatMainController.flowPane.getChildren().clear();
         imatMainController.flowPane1.getChildren().clear();
+    }
+
+
+    @FXML
+    private void plusAntal () {
+        antalInt++;
+        amountChangeable.setText(antalInt + "");
+    }
+
+    @FXML
+    private void minusAntal () {
+        if (antalInt > 0) {
+            antalInt--;
+            amountChangeable.setText(antalInt + "");
+        }
     }
 }
