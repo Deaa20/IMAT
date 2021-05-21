@@ -528,7 +528,7 @@ public class ImatMainController implements Initializable {
         }
         catch (NumberFormatException e) {
             updateKontoInfo();
-        //    giltigError.setText("Ogiltig input, skriv gärna giltighetsdatum med siffror");
+           giltigError.setText("Ogiltig input, skriv gärna giltighetsdatum med siffror");
         }
 
         try {
@@ -536,7 +536,7 @@ public class ImatMainController implements Initializable {
         }
         catch (NumberFormatException e) {
             updateKontoInfo();
-          //  cvvError.setText("Ogiltig input, skriv gärna CVV med siffror");
+           cvvError.setText("Ogiltig input, skriv gärna CVV med siffror");
         }
 
         updateKontoInfo();
@@ -593,14 +593,12 @@ public class ImatMainController implements Initializable {
 
 
 @FXML public void setHistoDet(Order order, double price){
-    //antal.setVisible(true);
-    ItemsCardsController itemsCardsController;
     SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
 
         histoFlow.getChildren().clear();
         histoDet.toFront();
         for(ShoppingItem s: order.getItems()) {
-            histoFlow.getChildren().add(itemsCardsController= new ItemsCardsController(iMatDataHandler,this,s.getProduct().getProductId(), true));
+            histoFlow.getChildren().add( new ItemsCardsController(iMatDataHandler,this,s.getProduct().getProductId(), true));
         }
         orderNummerDet.setText(order.getOrderNumber()+"");
         datumDet.setText(formatter.format(order.getDate()));
