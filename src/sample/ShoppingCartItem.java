@@ -88,7 +88,6 @@ public class ShoppingCartItem extends AnchorPane {
     @FXML
     private void plusAntal () {
 
-
         shoppingItem.setAmount(shoppingItem.getAmount()+1);
         amountChangeable.setText(shoppingItem.getAmount() + "");
         imatMainController.setCartCards();
