@@ -29,7 +29,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ImageView fx:id="favorit" fitHeight="30.0" fitWidth="31.0" layoutX="275.0" layoutY="35.0" onMouseClicked="#setFavoritItem" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="favorit" fitHeight="30.0" fitWidth="31.0" layoutX="275.0" layoutY="15.0" onMouseClicked="#setFavoritItem" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -61,26 +61,6 @@
             <Image url="@../pic/unknown.png" />
          </image>
       </ImageView>
-      <Label fx:id="amount" layoutX="248.0" layoutY="79.0" prefHeight="27.0" prefWidth="59.0" text="Label">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="antalText" layoutX="196.0" layoutY="79.0" text="Antal:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="totText" layoutX="196.0" layoutY="119.0" prefHeight="27.0" prefWidth="44.0" text="Tot:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="totPrisLebel" layoutX="249.0" layoutY="119.0" prefHeight="27.0" prefWidth="59.0" text="Label">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
    </children>
    <effect>
       <DropShadow>

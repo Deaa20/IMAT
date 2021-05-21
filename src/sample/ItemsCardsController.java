@@ -94,10 +94,7 @@ public class ItemsCardsController extends AnchorPane {
         else if (!iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))){
             favorit.setImage(image);
         }
-        amount.setVisible(setvisable);
-        totPrisLebel.setVisible(setvisable);
-        antalText.setVisible(setvisable);
-        totText.setVisible(setvisable);
+
        // removeItemCart.setVisible(setvisable);
 
         if(iMatDataHandler.getProduct(id).isEcological()){
