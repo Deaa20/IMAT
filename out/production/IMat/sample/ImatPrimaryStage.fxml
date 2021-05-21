@@ -415,31 +415,6 @@
                   <AnchorPane layoutX="1.0" layoutY="-3.0" prefHeight="751.0" prefWidth="1191.0" style="-fx-background-color: #ffffff;">
                      <children>
                         <Line endX="-93.0" endY="630.6666870117188" layoutX="599.0" layoutY="42.0" startX="-92.99996948242188" startY="84.5" />
-                        <Label fx:id="namn" layoutX="94.0" layoutY="202.0" prefHeight="34.0" prefWidth="111.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="personnummer" layoutX="222.0" layoutY="262.0" prefHeight="34.0" prefWidth="253.0" styleClass="input-box" text="***********">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="telefonNummer" layoutX="222.0" layoutY="320.0" prefHeight="34.0" prefWidth="253.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="epostAdress" layoutX="222.0" layoutY="380.0" prefHeight="34.0" prefWidth="253.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="adress" layoutX="124.0" layoutY="496.0" prefHeight="34.0" prefWidth="347.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
                         <Label layoutX="14.0" layoutY="506.0" prefHeight="27.0" prefWidth="97.0" text="Adress:">
                            <font>
                               <Font name="Arial Bold" size="23.0" />
@@ -451,36 +426,6 @@
                                  </color>
                               </DropShadow>
                            </effect>
-                        </Label>
-                        <Label fx:id="efterNamn" layoutX="337.0" layoutY="202.0" prefHeight="34.0" prefWidth="159.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="kortnummerKonto" layoutX="702.0" layoutY="202.0" prefHeight="27.0" prefWidth="277.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="giltigTillYear" layoutX="700.0" layoutY="256.0" prefHeight="17.0" prefWidth="127.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="giltigTillMount" layoutX="854.0" layoutY="256.0" prefHeight="17.0" prefWidth="127.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cvv" layoutX="702.0" layoutY="333.0" prefHeight="27.0" prefWidth="269.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="korthållare" layoutX="702.0" layoutY="410.0" prefHeight="17.0" prefWidth="277.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
                         </Label>
                         <Label alignment="CENTER_RIGHT" layoutX="527.0" layoutY="256.0" prefHeight="27.0" prefWidth="143.0" text="Giltig till:">
                            <font>
@@ -554,11 +499,6 @@
                               </DropShadow>
                            </effect>
                         </Label>
-                        <Label fx:id="postNummer" layoutX="186.0" layoutY="546.0" prefHeight="34.0" prefWidth="295.0" styleClass="input-box">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
                         <Label layoutX="14.0" layoutY="546.0" prefHeight="27.0" prefWidth="159.0" text="Postnummer:">
                            <font>
                               <Font name="Arial Bold" size="23.0" />
@@ -595,7 +535,7 @@
                               </DropShadow>
                            </effect>
                         </Label>
-                        <Button layoutX="990.0" layoutY="665.0" mnemonicParsing="false" onMouseClicked="#setChangeKontoUppgifterScen" prefHeight="65.0" prefWidth="173.0" style="-fx-background-color: #5697EF;" text="Ändra...">
+                        <Button fx:id="s" layoutX="990.0" layoutY="665.0" mnemonicParsing="false" onMouseClicked="#saveKonto" prefHeight="65.0" prefWidth="173.0" style="-fx-background-color: #5697EF;" text="Ändra...">
                            <font>
                               <Font name="Arial Bold Italic" size="17.0" />
                            </font>
@@ -654,6 +594,18 @@
                               </DropShadow>
                            </effect>
                         </Label>
+                        <TextField layoutX="232.0" layoutY="273.0" prefHeight="25.0" prefWidth="251.0" />
+                        <TextField fx:id="telefonnummerKonto" layoutX="232.0" layoutY="336.0" prefHeight="25.0" prefWidth="251.0" />
+                        <TextField fx:id="epostAdressKonto" layoutX="232.0" layoutY="391.0" prefHeight="25.0" prefWidth="251.0" />
+                        <TextField fx:id="adressKonto" layoutX="223.0" layoutY="507.0" prefHeight="25.0" prefWidth="261.0" />
+                        <TextField fx:id="postnummerKonto" layoutX="223.0" layoutY="547.0" prefHeight="25.0" prefWidth="261.0" />
+                        <TextField fx:id="kortnummerKonto" layoutX="708.0" layoutY="203.0" prefHeight="25.0" prefWidth="426.0" />
+                        <TextField fx:id="giltigTillMonthKonto" layoutX="708.0" layoutY="257.0" prefHeight="25.0" prefWidth="150.0" />
+                        <TextField fx:id="cvvKonto" layoutX="708.0" layoutY="331.0" prefHeight="25.0" prefWidth="426.0" />
+                        <TextField fx:id="korthållareKonto" layoutX="708.0" layoutY="411.0" prefHeight="25.0" prefWidth="426.0" />
+                        <TextField fx:id="namnKonto" layoutX="98.0" layoutY="206.0" prefHeight="25.0" prefWidth="97.0" />
+                        <TextField fx:id="efterNamnKonto" layoutX="349.0" layoutY="206.0" prefHeight="25.0" prefWidth="135.0" />
+                        <TextField fx:id="giltigTillYearKonto" layoutX="879.0" layoutY="259.0" prefHeight="25.0" prefWidth="143.0" />
                      </children>
                   </AnchorPane>
                </children>
