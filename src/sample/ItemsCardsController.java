@@ -50,6 +50,8 @@ public class ItemsCardsController extends AnchorPane {
     Label amount;
 
 
+
+
     @FXML Label totPrisLebel;
     @FXML Label antalText;
     @FXML Label totText;
@@ -127,6 +129,7 @@ public class ItemsCardsController extends AnchorPane {
         parentController.getInfoScen();
         parentController.cardImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         parentController.detInfoPris.setText(productPrice.getText());
+        parentController.titel.setText(iMatDataHandler.getProduct(id).getName());
 
     }
 
