@@ -39,9 +39,11 @@ public class ShoppingCartItem extends AnchorPane {
 
     int antalInt =1;
 
+    ShoppingItem shoppingItem;
+
     public ShoppingCartItem(IMatDataHandler iMatDataHandler,
                                    ImatMainController imatMainController,
-                            int id){
+                            int id,ShoppingItem s){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource
                 ("ShoppingCartItem.fxml"));
         fxmlLoader.setRoot(this);
@@ -55,6 +57,7 @@ public class ShoppingCartItem extends AnchorPane {
         this.iMatDataHandler =iMatDataHandler;
         this.imatMainController=imatMainController;
         this.id = id;
+        this.shoppingItem=s;
 
         image.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         name.setText(iMatDataHandler.getProduct(id).getName());
@@ -84,15 +87,20 @@ public class ShoppingCartItem extends AnchorPane {
 
     @FXML
     private void plusAntal () {
-        antalInt++;
-        amountChangeable.setText(antalInt + "");
+
+
+        shoppingItem.setAmount(shoppingItem.getAmount()+1);
+        amountChangeable.setText(shoppingItem.getAmount() + "");
+        imatMainController.setCartCards();
     }
 
     @FXML
     private void minusAntal () {
-        if (antalInt > 0) {
-            antalInt--;
-            amountChangeable.setText(antalInt + "");
+        if (shoppingItem.getAmount() > 0) {
+            shoppingItem.setAmount(shoppingItem.getAmount()+-1);
+            amountChangeable.setText(shoppingItem.getAmount() + "");
+            imatMainController.setCartCards();
+            imatMainController.setCartCards();
         }
     }
 }
