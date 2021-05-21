@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.AmbientLight?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -50,7 +49,7 @@
                               <Image url="@../pic/unknown44.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="686.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="686.0" layoutY="14.0" onMouseClicked="#infoScenToBack" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/Close-512.png" />
                            </image>
@@ -66,185 +65,50 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="changeKontoUppgifterScen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(0,0,0,0.75);">
+            <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
                <children>
-                  <AnchorPane layoutX="114.0" layoutY="103.0" prefHeight="584.0" prefWidth="988.0" style="-fx-background-color: #ffffff;">
+                  <AnchorPane layoutX="105.0" layoutY="102.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Label layoutX="59.0" layoutY="332.0" prefHeight="27.0" prefWidth="97.0" text="Adress:">
+                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum">
                            <font>
-                              <Font name="Arial Bold" size="23.0" />
+                              <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="99.0" prefHeight="27.0" prefWidth="143.0" text="Giltig till:">
+                        <Label fx:id="orderNummerDet" layoutX="199.0" layoutY="11.0" prefHeight="35.0" prefWidth="113.0" text="Label">
                            <font>
-                              <Font name="Arial Bold" size="23.0" />
+                              <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="249.0" prefHeight="27.0" prefWidth="143.0" text="Korthållare:">
+                        <Label layoutX="781.0" layoutY="517.0" text="Tot.Pris">
                            <font>
-                              <Font name="Arial Bold" size="23.0" />
+                              <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="36.0" prefHeight="27.0" prefWidth="150.0" text="KortNummer:">
+                        <Label fx:id="datumDet" layoutX="429.0" layoutY="11.0" prefHeight="35.0" prefWidth="230.0" text="Label">
                            <font>
-                              <Font name="Arial Bold" size="23.0" />
+                              <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="98.0" text="Perssonnummer:">
+                        <Label layoutX="23.0" layoutY="11.0" text="Order Nummer">
                            <font>
-                              <Font name="Arial Bold" size="23.0" />
+                              <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="156.0" text="Telefonnummer:">
+                        <Label fx:id="totPrisDet" layoutX="893.0" layoutY="517.0" prefHeight="35.0" prefWidth="113.0" text="Label">
                            <font>
-                              <Font name="Arial Bold" size="23.0" />
+                              <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="216.0" prefHeight="27.0" prefWidth="181.0" text="Epost-adress:">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="372.0" prefHeight="27.0" prefWidth="159.0" text="Postnummer:">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="19.0" layoutY="31.0" prefHeight="27.0" prefWidth="79.0" text="Namn:">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="210.0" layoutY="31.0" prefHeight="27.0" prefWidth="127.0" text="Efternamn:">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="174.0" prefHeight="27.0" prefWidth="143.0" text="CVV:">
-                           <font>
-                              <Font name="Arial Bold" size="23.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="namnKonto" layoutX="94.0" layoutY="32.0" prefHeight="25.0" prefWidth="111.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="efterNamnKonto" layoutX="337.0" layoutY="32.0" prefHeight="25.0" prefWidth="111.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="perssonnummerKonto" layoutX="218.0" layoutY="99.0" prefHeight="25.0" prefWidth="229.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="telefonnummerKonto" layoutX="218.0" layoutY="157.0" onKeyReleased="#changeTelefonNummer" prefHeight="25.0" prefWidth="229.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="epostAdressKonto" layoutX="218.0" layoutY="217.0" onKeyReleased="#changeEmail" prefHeight="25.0" prefWidth="229.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="adressKonto" layoutX="164.0" layoutY="333.0" onKeyReleased="#changeAdress" prefHeight="25.0" prefWidth="295.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="postnummerKonto" layoutX="168.0" layoutY="373.0" onKeyReleased="#changePostNummer" prefHeight="25.0" prefWidth="105.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="KortnummerKonto" layoutX="694.0" layoutY="37.0" prefHeight="25.0" prefWidth="229.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="giltigTillYearKonto" layoutX="698.0" layoutY="100.0" prefHeight="25.0" prefWidth="97.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="cvvKonto" layoutX="698.0" layoutY="174.0" prefHeight="25.0" prefWidth="229.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <TextField fx:id="korthållareKonto" layoutX="698.0" layoutY="250.0" prefHeight="25.0" prefWidth="229.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <Button layoutX="795.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#updateKontoInfo" prefHeight="65.0" prefWidth="127.0" style="-fx-background-color: #5697ef;" text="Spara">
-                           <font>
-                              <Font name="Arial Bold" size="25.0" />
-                           </font>
-                        </Button>
-                        <ImageView fx:id="closeChangeKontoUpp" fitHeight="41.0" fitWidth="41.0" layoutX="933.0" layoutY="11.0" onMouseClicked="#setKontoUppgifterScen" pickOnBounds="true" preserveRatio="true">
+                        <ScrollPane layoutX="4.0" layoutY="58.0" prefHeight="449.0" prefWidth="1018.0">
+                           <content>
+                              <FlowPane fx:id="histoFlow" prefHeight="447.0" prefWidth="1011.0" />
+                           </content>
+                        </ScrollPane>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="968.0" layoutY="9.0" onMouseClicked="#setHistDetBack" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/Close-512.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="giltigTillMonthKonto" layoutX="824.0" layoutY="99.0" prefHeight="25.0" prefWidth="97.0">
-                           <effect>
-                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
-                                 <color>
-                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </TextField>
-                        <Label fx:id="cvvError" layoutX="503.0" layoutY="221.0" prefHeight="17.0" prefWidth="429.0" />
-                        <Label fx:id="giltigError" layoutX="503.0" layoutY="139.0" prefHeight="17.0" prefWidth="429.0" />
                      </children>
                   </AnchorPane>
                </children>
@@ -562,63 +426,246 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="changeKontoUppgifterScen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(0,0,0,0.75);">
+               <children>
+                  <AnchorPane layoutX="114.0" layoutY="103.0" prefHeight="584.0" prefWidth="988.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="59.0" layoutY="332.0" prefHeight="27.0" prefWidth="97.0" text="Adress:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="99.0" prefHeight="27.0" prefWidth="143.0" text="Giltig till:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="249.0" prefHeight="27.0" prefWidth="143.0" text="Korthållare:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="36.0" prefHeight="27.0" prefWidth="150.0" text="KortNummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="98.0" text="Perssonnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="156.0" text="Telefonnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="216.0" prefHeight="27.0" prefWidth="181.0" text="Epost-adress:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="372.0" prefHeight="27.0" prefWidth="159.0" text="Postnummer:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="31.0" prefHeight="27.0" prefWidth="79.0" text="Namn:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="210.0" layoutY="31.0" prefHeight="27.0" prefWidth="127.0" text="Efternamn:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="528.0" layoutY="174.0" prefHeight="27.0" prefWidth="143.0" text="CVV:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="namnKonto" layoutX="94.0" layoutY="32.0" prefHeight="25.0" prefWidth="111.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="efterNamnKonto" layoutX="337.0" layoutY="32.0" prefHeight="25.0" prefWidth="111.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="perssonnummerKonto" layoutX="218.0" layoutY="99.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="telefonnummerKonto" layoutX="218.0" layoutY="157.0" onKeyReleased="#changeTelefonNummer" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="epostAdressKonto" layoutX="218.0" layoutY="217.0" onKeyReleased="#changeEmail" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="adressKonto" layoutX="164.0" layoutY="333.0" onKeyReleased="#changeAdress" prefHeight="25.0" prefWidth="295.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="postnummerKonto" layoutX="168.0" layoutY="373.0" onKeyReleased="#changePostNummer" prefHeight="25.0" prefWidth="105.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="KortnummerKonto" layoutX="694.0" layoutY="37.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="giltigTillYearKonto" layoutX="698.0" layoutY="100.0" prefHeight="25.0" prefWidth="97.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="cvvKonto" layoutX="698.0" layoutY="174.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="korthållareKonto" layoutX="698.0" layoutY="250.0" prefHeight="25.0" prefWidth="229.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <Button layoutX="795.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#updateKontoInfo" prefHeight="65.0" prefWidth="127.0" style="-fx-background-color: #5697ef;" text="Spara">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="closeChangeKontoUpp" fitHeight="41.0" fitWidth="41.0" layoutX="933.0" layoutY="11.0" onMouseClicked="#setKontoUppgifterScen" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="giltigTillMonthKonto" layoutX="824.0" layoutY="99.0" prefHeight="25.0" prefWidth="97.0">
+                           <effect>
+                              <InnerShadow height="24.95" radius="12.469999999999999" width="26.93">
+                                 <color>
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                        </TextField>
+                        <Label fx:id="cvvError" layoutX="503.0" layoutY="221.0" prefHeight="17.0" prefWidth="429.0" />
+                        <Label fx:id="giltigError" layoutX="503.0" layoutY="139.0" prefHeight="17.0" prefWidth="429.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="mainScen" prefHeight="735.0" prefWidth="1188.0">
                <children>
                   <SplitPane dividerPositions="0.15605749486652978" layoutX="-6.0" layoutY="95.0" prefHeight="649.0" prefWidth="1196.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="662.0" prefWidth="183.0" style="-fx-background-color: #ffffff;" styleClass="background">
                            <children>
-                              <Button fx:id="mejeri" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Mejeri">
+                              <Button fx:id="mejeri" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Mejeri">
                                  <font>
-                                    <Font name="Arial Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="chark" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Chark">
+                              <Button fx:id="chark" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Chark">
                                  <font>
-                                    <Font name="Arial Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="grönsaker" layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Grönsaker    &amp; Frukt" wrapText="true">
+                              <Button fx:id="grönsaker" layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Grönsaker    &amp; Frukt" wrapText="true">
                                  <font>
-                                    <Font name="Arial Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="bröd" layoutX="37.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#breadFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Bröd">
+                              <Button fx:id="bröd" layoutX="37.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#breadFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Bröd">
                                  <font>
-                                    <Font name="Arial Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="kryddor" layoutX="37.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#kryddorFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Kryddor">
+                              <Button fx:id="kryddor" layoutX="37.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#kryddorFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Kryddor">
                                  <font>
-                                    <Font name="Arial Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="godis" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#sweetFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="godis">
+                              <Button fx:id="godis" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#sweetFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Godis">
                                  <font>
-                                    <Font name="Arial Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#dryckFilter" prefHeight="73.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Dryck">
+                              <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#dryckFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Dryck">
                                  <font>
-                                    <Font name="Arial Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -628,83 +675,6 @@
                         </AnchorPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                              <AnchorPane fx:id="itemsAnchor1" layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
-                                 <children>
-                                    <ScrollPane fitToWidth="true" layoutY="44.0" prefHeight="606.0" prefWidth="1018.0" style="-fx-background-color: £ffffff;" AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="44.0">
-                                       <content>
-                                          <FlowPane fx:id="flowPane1" prefHeight="602.0" prefWidth="1015.0">
-                                             <children>
-                                                <AmbientLight>
-                                                   <color>
-                                                      <Color red="0.7631579041481018" green="0.03768680989742279" blue="0.03768680989742279" />
-                                                   </color>
-                                                </AmbientLight>
-                                             </children>
-                                          </FlowPane>
-                                       </content>
-                                    </ScrollPane>
-                                    <Label fx:id="page_label1" prefHeight="43.0" prefWidth="277.0" text="Label">
-                                       <font>
-                                          <Font size="26.0" />
-                                       </font>
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </Label>
-                                    <TextField fx:id="searchFilter1" layoutX="317.0" layoutY="2.0" onKeyTyped="#setSearchFilter" prefHeight="27.0" prefWidth="680.0" promptText="Sök här">
-                                       <effect>
-                                          <DropShadow height="38.79" radius="36.1925" width="107.98">
-                                             <color>
-                                                <Color red="0.01666666753590107" blue="1.0" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </TextField>
-                                    <Button layoutX="130.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#getPayScen" text="BETALA" />
-                                 </children>
-                              </AnchorPane>
-                            <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
-                                 <children>
-                                    <ScrollPane fitToWidth="true" layoutY="44.0" prefHeight="606.0" prefWidth="1018.0" style="-fx-background-color: £ffffff;" AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="44.0">
-                                       <content>
-                                          <FlowPane fx:id="flowPane" prefHeight="602.0" prefWidth="1015.0">
-                                             <children>
-                                                <AmbientLight>
-                                                   <color>
-                                                      <Color red="0.7631579041481018" green="0.03768680989742279" blue="0.03768680989742279" />
-                                                   </color>
-                                                </AmbientLight>
-                                             </children>
-                                          </FlowPane>
-                                       </content>
-                                    </ScrollPane>
-                                    <Label fx:id="page_label" prefHeight="43.0" prefWidth="277.0" text="Label">
-                                       <font>
-                                          <Font size="26.0" />
-                                       </font>
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </Label>
-                                    <TextField fx:id="searchFilter" layoutX="317.0" layoutY="2.0" onKeyTyped="#setSearchFilter" prefHeight="27.0" prefWidth="680.0" promptText="Sök här">
-                                       <effect>
-                                          <DropShadow height="38.79" radius="36.1925" width="107.98">
-                                             <color>
-                                                <Color red="0.01666666753590107" blue="1.0" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </TextField>
-                                 </children>
-                              </AnchorPane>
                               <AnchorPane fx:id="homeAnchor" prefHeight="619.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
                                  <children>
                                     <Label alignment="TOP_CENTER" layoutX="179.0" prefHeight="99.0" prefWidth="576.0" text="Välkomen till IMAT">
@@ -793,6 +763,57 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
+                            <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <ScrollPane fitToWidth="true" layoutY="44.0" prefHeight="548.0" prefWidth="1018.0" style="-fx-background-color: £ffffff;" AnchorPane.bottomAnchor="55.0" AnchorPane.topAnchor="44.0">
+                                       <content>
+                                          <FlowPane fx:id="flowPane" prefHeight="556.0" prefWidth="1015.0" />
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="page_label" prefHeight="43.0" prefWidth="277.0" text="Label">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Label>
+                                    <TextField fx:id="searchFilter" layoutX="309.0" layoutY="5.0" onKeyTyped="#setSearchFilter" prefHeight="1.0" prefWidth="685.0" promptText="Sök här...">
+                                       <effect>
+                                          <DropShadow height="38.79" radius="36.1925" width="107.98">
+                                             <color>
+                                                <Color red="0.01666666753590107" blue="1.0" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="betalaLabel" alignment="TOP_LEFT" layoutX="705.0" layoutY="592.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="53.0" prefWidth="127.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
+                                       <font>
+                                          <Font name="Arial Bold" size="26.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label fx:id="totPriceVaro" layoutX="864.0" layoutY="599.0" prefHeight="34.0" prefWidth="113.0">
+                                       <font>
+                                          <Font name="Arial Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="tömmaVarukorgen" layoutX="14.0" layoutY="594.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="43.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </StackPane>
                     </items>
@@ -807,92 +828,69 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Button fx:id="setHome" layoutX="152.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#setHome" prefHeight="43.0" prefWidth="89.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
+                        <Button fx:id="setHome" alignment="BASELINE_LEFT" layoutX="152.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#setHome" prefHeight="43.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
                            <font>
-                              <Font name="Arial Bold" size="14.0" />
+                              <Font name="Arial Bold" size="21.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                      <Button fx:id="konto" layoutX="964.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setKontoUppgifterScen" prefHeight="41.0" prefWidth="143.0" style="-fx-background-color: #5697ef;" styleClass="background" stylesheets="@button.css" text="Konto">
+                      <Button fx:id="konto" alignment="BASELINE_LEFT" layoutX="964.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setKontoUppgifterScen" prefHeight="41.0" prefWidth="143.0" style="-fx-background-color: #5697ef;" styleClass="background" stylesheets="@button.css" text="Konto">
                            <font>
-                              <Font name="Arial Bold" size="14.0" />
+                              <Font name="Arial Bold" size="21.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="772.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setCartCards" prefHeight="41.0" prefWidth="181.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Varukorgen">
+                        <Button alignment="BASELINE_LEFT" layoutX="772.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setCartCards" prefHeight="41.0" prefWidth="181.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Varukorgen">
                            <font>
-                              <Font name="Arial Bold" size="14.0" />
+                              <Font name="Arial Bold" size="21.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="585.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Favorit">
+                        <Button alignment="BASELINE_LEFT" layoutX="585.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Favorit">
                            <font>
-                              <Font name="Arial Bold" size="14.0" />
+                              <Font name="Arial Bold" size="21.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="403.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
+                        <Button alignment="BASELINE_LEFT" contentDisplay="TEXT_ONLY" layoutX="387.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="41.0" prefWidth="189.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
                            <font>
-                              <Font name="Arial Bold" size="14.0" />
+                              <Font name="Arial Bold" size="21.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
-               <children>
-                  <AnchorPane layoutX="139.0" layoutY="99.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="orderNummerDet" layoutX="199.0" layoutY="11.0" prefHeight="35.0" prefWidth="113.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="763.0" layoutY="491.0" text="Tot.Pris">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="datumDet" layoutX="429.0" layoutY="11.0" prefHeight="35.0" prefWidth="230.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="23.0" layoutY="11.0" text="Order Nummer">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="totPrisDet" layoutX="875.0" layoutY="491.0" prefHeight="35.0" prefWidth="113.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <ScrollPane layoutX="4.0" layoutY="58.0" prefHeight="407.0" prefWidth="988.0">
-                           <content>
-                              <FlowPane fx:id="histoFlow" prefHeight="393.0" prefWidth="981.0" />
-                           </content>
-                        </ScrollPane>
-                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="968.0" layoutY="9.0" onMouseClicked="#setHistDetBack" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="533.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../pic/Close-512.png" />
+                              <Image url="@../pic/document.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="715.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/star%20(2).png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="910.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/shopping-cart.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="1061.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/user.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="244.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/home.png" />
                            </image>
                         </ImageView>
                      </children>

@@ -51,7 +51,17 @@ public class ItemsCardsController extends AnchorPane {
     @FXML
     Label amount;
 
+
+    @FXML Label totPrisLebel;
+    @FXML Label antalText;
+    @FXML Label totText;
+    @FXML ImageView removeItemCart;
+
     int antalInt = 1;
+
+
+
+
 
 
 
@@ -63,7 +73,7 @@ public class ItemsCardsController extends AnchorPane {
 
 
     public ItemsCardsController(IMatDataHandler iMatDataHandler,
-                                ImatMainController imatMainController, int id, boolean setAntal) {
+                                ImatMainController imatMainController, int id, boolean setvisable) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("item_card.fxml"));
         fxmlLoader.setRoot(this);
@@ -88,7 +98,11 @@ public class ItemsCardsController extends AnchorPane {
             favorit.setImage(image);
             favoritLabel.setText("Ej favorit");
         }
-        amount.setVisible(setAntal);
+        amount.setVisible(setvisable);
+        totPrisLebel.setVisible(setvisable);
+        antalText.setVisible(setvisable);
+        totText.setVisible(setvisable);
+       // removeItemCart.setVisible(setvisable);
 
         if(iMatDataHandler.getProduct(id).isEcological()){
             ecoImage.setImage(new Image("pic/eco.png"));
@@ -129,13 +143,15 @@ public class ItemsCardsController extends AnchorPane {
         Product p = iMatDataHandler.getProduct(id);
         if(isThere()){
             getShopingitem().setAmount((getShopingitem().getAmount()+antalInt)-1);
-            amount.setText("X"+getShopingitem().getAmount()+"");
+            amount.setText(getShopingitem().getAmount()+" st");
+            totPrisLebel.setText(getShopingitem().getTotal()+" kr");
         }
         else {
 
             iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(id));
             getShopingitem().setAmount((getShopingitem().getAmount()+antalInt)-1);
-            amount.setText("X"+getShopingitem().getAmount()+"");
+            amount.setText(getShopingitem().getAmount()+"st");
+            totPrisLebel.setText(getShopingitem().getTotal()+" kr");
 
         }
     }

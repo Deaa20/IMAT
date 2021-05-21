@@ -62,7 +62,6 @@ Order order;
 
         setDatum();
         totPris.setText(setTotPris()+"");
-       // antalVaror.setText(setAntalVaror()+"");
         orderNummer.setText(order.getOrderNumber()+"");
 
 

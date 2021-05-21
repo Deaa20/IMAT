@@ -174,8 +174,15 @@ public class ImatMainController implements Initializable {
 
     @FXML Label datumDet;
     @FXML Label orderNummerDet;
-
      @FXML Label totPrisDet;
+
+     @FXML Button betalaLabel;
+     @FXML Label  totPriceVaro;
+    @FXML Label  totPriceVaro1;
+    @FXML Button tömmaVarukorgen;
+
+
+
 
 
 
@@ -195,6 +202,7 @@ public class ImatMainController implements Initializable {
         histoFlow.setHgap(7);
         histoFlow.setVgap(7);
         antalLabel.setText(antalInt+"");
+        setHome();
 
     }
 
@@ -214,6 +222,9 @@ public class ImatMainController implements Initializable {
     @FXML
     public void vegeFilter() {
         antal.setDisable(false);
+       betalaLabel.setVisible(false);
+       totPriceVaro.setVisible(false);
+       tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.POD))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
@@ -238,7 +249,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void breadFilter() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.BREAD))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -251,7 +265,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void meatFilter() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.MEAT))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -263,7 +280,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void sweetFilter() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.SWEET))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -274,7 +294,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void milkProductFilter() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.DAIRIES))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -284,7 +307,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void kryddorFilter() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HERB))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -294,7 +320,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void dryckFilter() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -307,7 +336,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void setSearchFilter() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         page_label.setText("söker...");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.findProducts(searchFilter.getText())){
@@ -321,7 +353,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void setHistorikCards() {
+        betalaLabel.setVisible(false);
         antal.setDisable(true);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         page_label.setText("Historik");
         for (Order o : orderList) {
@@ -333,7 +368,10 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void setFavoritCards() {
+        betalaLabel.setVisible(false);
         antal.setDisable(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         page_label.setText("Favorit");
         ItemsCardsController itemsCardsController;
@@ -510,22 +548,28 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void setCartCards() {
+        betalaLabel.setVisible(true);
+        totPriceVaro.setVisible(true);
+        tömmaVarukorgen.setVisible(true);
+        totPriceVaro.setText(iMatDataHandler.getShoppingCart().getTotal()+ " kr");
+        ItemsCardsController itemsCardsController;
         antal.setVisible(true);
         flowPane.getChildren().clear();
-        flowPane1.getChildren().clear();
+
         page_label.setText("Varukorg");
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
-            flowPane1.getChildren().add(new ShoppingCartItem(
-                    iMatDataHandler, this, s.getProduct().getProductId()));
+            flowPane.getChildren().add(itemsCardsController=new ItemsCardsController(
+                    iMatDataHandler, this, s.getProduct().getProductId(), true));
+            itemsCardsController.amount.setText(+(int)(s.getAmount())+" st");
+            itemsCardsController.totPrisLebel.setText(s.getTotal()+" kr");
+
         }
-        //setItemsFlow();
-        itemsAnchor1.toFront();
+       setItemsFlow();
     }
 
     @FXML public void placeNow(){
         iMatDataHandler.placeOrder();
         flowPane.getChildren().clear();
-        flowPane1.getChildren().clear();
         mainScen.toFront();
     }
 
@@ -539,7 +583,8 @@ public class ImatMainController implements Initializable {
         histoDet.toFront();
         for(ShoppingItem s: order.getItems()) {
             histoFlow.getChildren().add(itemsCardsController= new ItemsCardsController(iMatDataHandler,this,s.getProduct().getProductId(), true));
-            itemsCardsController.amount.setText("X"+s.getAmount()+"");
+            itemsCardsController.amount.setText((int)(s.getAmount())+" st");
+            itemsCardsController.totPrisLebel.setText(s.getTotal()+" kr");
         }
         orderNummerDet.setText(order.getOrderNumber()+"");
         datumDet.setText(formatter.format(order.getDate()));
@@ -550,6 +595,17 @@ public class ImatMainController implements Initializable {
 public void setHistDetBack(){
         histoDet.toBack();
 
+}
+
+@FXML
+    public  void infoScenToBack(){
+        infoScen.toBack();
+}
+
+@FXML
+    public void emptyCart(){
+        iMatDataHandler.getShoppingCart().clear();
+        flowPane.getChildren().clear();
 }
 
 
