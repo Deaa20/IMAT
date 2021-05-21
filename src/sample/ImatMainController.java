@@ -580,7 +580,7 @@ public class ImatMainController implements Initializable {
         flowpay.getChildren().clear();
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
             flowpay.getChildren().add(new ShoppingCartItem(
-                    iMatDataHandler, this, s.getProduct().getProductId()));
+                    iMatDataHandler, this, s.getProduct().getProductId(),s));
 
         }
 
@@ -601,7 +601,7 @@ public class ImatMainController implements Initializable {
         page_label.setText("Varukorg");
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
             flowPane.getChildren().add(shoppingCartItem=new ShoppingCartItem(
-                    iMatDataHandler, this, s.getProduct().getProductId()));
+                    iMatDataHandler, this, s.getProduct().getProductId(),s));
             shoppingCartItem.amount.setText(+(int)(s.getAmount())+" st");
             shoppingCartItem.totPris.setText(s.getTotal()+" kr");
 
