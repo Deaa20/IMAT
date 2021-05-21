@@ -32,7 +32,7 @@ public class ShoppingCartItem extends AnchorPane {
     Label amount;
     @FXML
     Label totPris;
-    @FXML Label amountChangeable;
+
 
     @FXML ImageView plusImage;
     @FXML ImageView minusImage;
@@ -66,7 +66,7 @@ public class ShoppingCartItem extends AnchorPane {
             if (shoppingItem.getProduct().equals(iMatDataHandler.getProduct(id))) {
                 System.out.println(shoppingItem.getAmount());
                 System.out.println(shoppingItem.getTotal() + "total");
-                price.setText((iMatDataHandler.getProduct(id).getPrice() * shoppingItem.getAmount()) + "");
+                price.setText((iMatDataHandler.getProduct(id).getPrice() + "kr"));
 
 
             }
@@ -90,7 +90,6 @@ public class ShoppingCartItem extends AnchorPane {
 
 
         shoppingItem.setAmount(shoppingItem.getAmount()+1);
-        amountChangeable.setText(shoppingItem.getAmount() + "");
         imatMainController.setCartCards();
     }
 
@@ -98,7 +97,6 @@ public class ShoppingCartItem extends AnchorPane {
     private void minusAntal () {
         if (shoppingItem.getAmount() > 0) {
             shoppingItem.setAmount(shoppingItem.getAmount()+-1);
-            amountChangeable.setText(shoppingItem.getAmount() + "");
             imatMainController.setCartCards();
             imatMainController.setCartCards();
         }
