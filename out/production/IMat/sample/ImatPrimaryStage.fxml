@@ -19,10 +19,56 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
+<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
       <StackPane prefHeight="745.0" prefWidth="1188.0">
          <children>
+            <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane layoutX="240.0" layoutY="136.0" prefHeight="449.0" prefWidth="741.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0">
+                     <children>
+                        <ImageView fx:id="cardImage" fitHeight="207.0" fitWidth="214.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="detInfoPris" layoutX="48.0" layoutY="306.0" prefHeight="43.0" prefWidth="143.0" text="test">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font></Label>
+                        <Button layoutX="595.0" layoutY="386.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" style="-fx-background-color: #5697ef;" text="Lägga till">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="antalLabel" alignment="CENTER" layoutX="78.0" layoutY="359.0" prefHeight="27.0" prefWidth="35.0" text="Label" />
+                        <ImageView fx:id="plus" fitHeight="27.0" fitWidth="27.0" layoutX="118.0" layoutY="359.0" onMouseClicked="#plusAntal" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/unknown.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="47.0" layoutY="359.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/unknown44.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="686.0" layoutY="14.0" onMouseClicked="#infoScenToBack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="antal" alignment="TOP_RIGHT" contentDisplay="TOP" layoutX="269.0" layoutY="79.0" prefHeight="175.0" prefWidth="408.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true">
+                           <font>
+                              <Font name="Arial Italic" size="17.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></Label>
+                        <Label fx:id="titel" layoutX="269.0" layoutY="23.0" prefHeight="41.0" prefWidth="390.0" text="Vara">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
                <children>
                   <AnchorPane layoutX="105.0" layoutY="102.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
@@ -544,52 +590,8 @@
                         <TextField fx:id="namnKonto" layoutX="98.0" layoutY="206.0" prefHeight="25.0" prefWidth="97.0" />
                         <TextField fx:id="efterNamnKonto" layoutX="349.0" layoutY="206.0" prefHeight="25.0" prefWidth="135.0" />
                         <TextField fx:id="giltigTillYearKonto" layoutX="879.0" layoutY="259.0" prefHeight="25.0" prefWidth="143.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-               <children>
-                  <AnchorPane layoutX="240.0" layoutY="136.0" prefHeight="449.0" prefWidth="741.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0">
-                     <children>
-                        <ImageView fx:id="cardImage" fitHeight="207.0" fitWidth="214.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label fx:id="detInfoPris" layoutX="48.0" layoutY="306.0" prefHeight="43.0" prefWidth="143.0" text="test">
-                           <font>
-                              <Font name="Arial Bold" size="20.0" />
-                           </font></Label>
-                        <Button layoutX="595.0" layoutY="386.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" style="-fx-background-color: #5697ef;" text="Lägga till">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Button>
-                        <Label fx:id="antalLabel" alignment="CENTER" layoutX="78.0" layoutY="359.0" prefHeight="27.0" prefWidth="35.0" text="Label" />
-                        <ImageView fx:id="plus" fitHeight="27.0" fitWidth="27.0" layoutX="118.0" layoutY="359.0" onMouseClicked="#plusAntal" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/unknown.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="47.0" layoutY="359.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/unknown44.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="686.0" layoutY="14.0" onMouseClicked="#infoScenToBack" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/Close-512.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="antal" alignment="TOP_RIGHT" contentDisplay="TOP" layoutX="269.0" layoutY="79.0" prefHeight="175.0" prefWidth="408.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true">
-                           <font>
-                              <Font name="Arial Italic" size="17.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets></Label>
-                        <Label fx:id="titel" layoutX="269.0" layoutY="23.0" prefHeight="41.0" prefWidth="390.0" text="Vara">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
+                        <Label fx:id="cvvError" layoutX="708.0" layoutY="367.0" prefHeight="17.0" prefWidth="426.0" text="Label" />
+                        <Label fx:id="giltigError" layoutX="708.0" layoutY="299.0" prefHeight="17.0" prefWidth="426.0" text="Label" />
                      </children>
                   </AnchorPane>
                </children>

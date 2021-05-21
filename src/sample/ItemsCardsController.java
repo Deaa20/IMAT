@@ -139,13 +139,11 @@ public class ItemsCardsController extends AnchorPane {
         Product p = iMatDataHandler.getProduct(id);
         if(isThere()){
             getShopingitem().setAmount((getShopingitem().getAmount()+antalInt)-1);
-
         }
         else {
 
             iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(id));
             getShopingitem().setAmount((getShopingitem().getAmount()+antalInt)-1);
-
 
         }
     }
