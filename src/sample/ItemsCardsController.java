@@ -32,8 +32,6 @@ public class ItemsCardsController extends AnchorPane {
     @FXML
     ImageView productImage;
     @FXML
-    Label favoritLabel;
-    @FXML
     ImageView ecoImage;
     @FXML
     Button merInfo;
@@ -92,11 +90,9 @@ public class ItemsCardsController extends AnchorPane {
 
         if (iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))){
             favorit.setImage(imageFilled);
-            favoritLabel.setText("Favorit");
         }
         else if (!iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))){
             favorit.setImage(image);
-            favoritLabel.setText("Ej favorit");
         }
         amount.setVisible(setvisable);
         totPrisLebel.setVisible(setvisable);
@@ -193,7 +189,7 @@ public class ItemsCardsController extends AnchorPane {
             if (iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))) {
                 favorit.setImage(image);
                 iMatDataHandler.removeFavorite(iMatDataHandler.getProduct(id));
-                favoritLabel.setText("Ej favorit");
+
 
                 System.out.println("1");
 
@@ -201,7 +197,7 @@ public class ItemsCardsController extends AnchorPane {
             } else if (!iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))) {
                 favorit.setImage(imageFilled);
                 iMatDataHandler.addFavorite(iMatDataHandler.getProduct(id));
-                favoritLabel.setText("Favorit");
+
 
 
                 System.out.println("2");
