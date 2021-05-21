@@ -86,32 +86,6 @@ public class ImatMainController implements Initializable {
     ImageView exit;
 
 
-    @FXML
-    Label namn;
-    @FXML
-    Label efterNamn;
-    @FXML
-    Label personnummer;
-    @FXML
-    Label telefonNummer;
-    @FXML
-    Label epostAdress;
-    @FXML
-    Label adress;
-    @FXML
-    Label postNummer;
-    @FXML
-    Label kortNummer;
-    @FXML
-    Label giltigTillYear;
-    @FXML
-    Label giltigTillMount;
-    @FXML
-    Label cvv;
-    @FXML
-    Label korthållare;
-
-
 
 
 
@@ -131,7 +105,7 @@ public class ImatMainController implements Initializable {
     @FXML
     TextField postnummerKonto;
     @FXML
-    TextField KortnummerKonto;
+    TextField kortnummerKonto;
     @FXML
     TextField giltigTillYearKonto;
     @FXML
@@ -429,18 +403,18 @@ public class ImatMainController implements Initializable {
     @FXML
     private  void setKontoUppgifterScen(){
 
-        namn.setText(iMatDataHandler.getCustomer().getFirstName());
-        efterNamn.setText(iMatDataHandler.getCustomer().getLastName());
-        telefonNummer.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
-        epostAdress.setText(iMatDataHandler.getCustomer().getEmail());
-        adress.setText(iMatDataHandler.getCustomer().getAddress());
-        postNummer.setText(iMatDataHandler.getCustomer().getPostCode());
+        namnKonto.setText(iMatDataHandler.getCustomer().getFirstName());
+        efterNamnKonto.setText(iMatDataHandler.getCustomer().getLastName());
+        telefonnummerKonto.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
+        epostAdressKonto.setText(iMatDataHandler.getCustomer().getEmail());
+        adressKonto.setText(iMatDataHandler.getCustomer().getAddress());
+        postnummerKonto.setText(iMatDataHandler.getCustomer().getPostCode());
 
-        cvv.setText(iMatDataHandler.getCreditCard().getVerificationCode()+"");
-        kortNummer.setText(iMatDataHandler.getCreditCard().getCardNumber());
-        korthållare.setText(iMatDataHandler.getCreditCard().getHoldersName());
-        giltigTillMount.setText(iMatDataHandler.getCreditCard().getValidMonth()+"");
-        giltigTillYear.setText(iMatDataHandler.getCreditCard().getValidYear()+"");
+        cvvKonto.setText(iMatDataHandler.getCreditCard().getVerificationCode()+"");
+        kortnummerKonto.setText(iMatDataHandler.getCreditCard().getCardNumber());
+        korthållareKonto.setText(iMatDataHandler.getCreditCard().getHoldersName());
+       // giltigTillMount.setText(iMatDataHandler.getCreditCard().getValidMonth()+"");
+        //giltigTillYear.setText(iMatDataHandler.getCreditCard().getValidYear()+"");
 
 
         kontoUppgifterScen.toFront();
@@ -512,7 +486,27 @@ public class ImatMainController implements Initializable {
     @FXML
     private void updateKontoInfo(){
 
+        namnKonto.setText(iMatDataHandler.getCustomer().getFirstName());
+        efterNamnKonto.setText(iMatDataHandler.getCustomer().getLastName());
+        telefonnummerKonto.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
+        epostAdressKonto.setText(iMatDataHandler.getCustomer().getEmail());
+        adressKonto.setText(iMatDataHandler.getCustomer().getAddress());
+        postnummerKonto.setText(iMatDataHandler.getCustomer().getPostCode());
 
+        cvvKonto.setText(iMatDataHandler.getCreditCard().getVerificationCode()+"");
+        kortnummerKonto.setText(iMatDataHandler.getCreditCard().getCardNumber());
+        korthållareKonto.setText(iMatDataHandler.getCreditCard().getHoldersName());
+        giltigTillMonthKonto.setText(iMatDataHandler.getCreditCard().getValidMonth()+"");
+        giltigTillYearKonto.setText(iMatDataHandler.getCreditCard().getValidYear()+"");
+
+        kontoUppgifterScen.toFront();
+
+
+
+
+    }
+
+    public void saveKonto(){
         kontoUppgifterScen.toFront();
 
         iMatDataHandler.getCustomer().setFirstName(namnKonto.getText());
@@ -525,17 +519,17 @@ public class ImatMainController implements Initializable {
 
 
 
-        iMatDataHandler.getCreditCard().setCardNumber(KortnummerKonto.getText());
+        iMatDataHandler.getCreditCard().setCardNumber(kortnummerKonto.getText());
         iMatDataHandler.getCreditCard().setHoldersName(korthållareKonto.getText());
         try {
             iMatDataHandler.getCreditCard().setValidYear(Integer.parseInt(giltigTillYearKonto.getText()));
             iMatDataHandler.getCreditCard().setValidMonth(Integer.parseInt(giltigTillMonthKonto.getText()));
 
         }
-           catch (NumberFormatException e) {
-              setChangeKontoUppgifterScen();
-              giltigError.setText("Ogiltig input, skriv gärna giltighetsdatum med siffror");
-            }
+        catch (NumberFormatException e) {
+            setChangeKontoUppgifterScen();
+            giltigError.setText("Ogiltig input, skriv gärna giltighetsdatum med siffror");
+        }
 
         try {
             iMatDataHandler.getCreditCard().setVerificationCode(Integer.parseInt(cvvKonto.getText()));;
@@ -545,24 +539,12 @@ public class ImatMainController implements Initializable {
             cvvError.setText("Ogiltig input, skriv gärna CVV med siffror");
         }
 
-
-
-
-        namn.setText(iMatDataHandler.getCustomer().getFirstName());
-        efterNamn.setText(iMatDataHandler.getCustomer().getLastName());
-        telefonNummer.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
-        epostAdress.setText(iMatDataHandler.getCustomer().getEmail());
-        adress.setText(iMatDataHandler.getCustomer().getAddress());
-        postNummer.setText(iMatDataHandler.getCustomer().getPostCode());
-
-       cvv.setText(iMatDataHandler.getCreditCard().getVerificationCode()+"");
-       kortNummer.setText(iMatDataHandler.getCreditCard().getCardNumber());
-        korthållare.setText(iMatDataHandler.getCreditCard().getHoldersName());
-        giltigTillMount.setText(iMatDataHandler.getCreditCard().getValidMonth()+"");
-        giltigTillYear.setText(iMatDataHandler.getCreditCard().getValidYear()+"");
-
+        updateKontoInfo();
 
     }
+
+
+
 
 
     public void getPayScen(Event event) {
