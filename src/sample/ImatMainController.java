@@ -159,11 +159,14 @@ public class ImatMainController implements Initializable {
     @FXML Button historikButton;
     @FXML Button homeButton;
     @FXML Button favoritButton;
+    @FXML Button varukorgButton;
+    @FXML Button dryckButton;
 
     @FXML ImageView homeIcon;
     @FXML ImageView favoritIcon;
     @FXML ImageView varukorgIcon;
     @FXML ImageView kontoIcon;
+    @FXML ImageView historikIcon;
 
 
 
@@ -210,6 +213,8 @@ public class ImatMainController implements Initializable {
        betalaLabel.setVisible(false);
        totPriceVaro.setVisible(false);
        tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
+        grönsaker.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.POD))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
@@ -238,6 +243,8 @@ public class ImatMainController implements Initializable {
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
+        bröd.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.BREAD))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -254,6 +261,8 @@ public class ImatMainController implements Initializable {
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
+        chark.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.MEAT))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -269,6 +278,8 @@ public class ImatMainController implements Initializable {
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
+        godis.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.SWEET))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -283,6 +294,8 @@ public class ImatMainController implements Initializable {
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
+        mejeri.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.DAIRIES))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -296,6 +309,8 @@ public class ImatMainController implements Initializable {
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
+        kryddor.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HERB))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -309,6 +324,8 @@ public class ImatMainController implements Initializable {
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
+        dryckButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -325,6 +342,7 @@ public class ImatMainController implements Initializable {
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
+        setAllButtonsBlue();
         page_label.setText("söker...");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.findProducts(searchFilter.getText())){
@@ -346,6 +364,7 @@ public class ImatMainController implements Initializable {
         page_label.setText("Historik");
         setAllButtonsBlue();
         historikButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+        historikIcon.setImage(new Image("/pic/documentwhite.png"));
 
         for (Order o : orderList) {
             flowPane.getChildren().add(new historikCardsController(
@@ -356,15 +375,22 @@ public class ImatMainController implements Initializable {
 
     public void setAllButtonsBlue() {
         historikButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        historikIcon.setImage(new Image("/pic/document.png"));
         homeButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         homeIcon.setImage(new Image("/pic/home.png"));
+        favoritButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        favoritIcon.setImage(new Image("/pic/star (2).png"));
+        varukorgButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        varukorgIcon.setImage(new Image("/pic/shopping-cart.png"));
         konto.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        kontoIcon.setImage(new Image("/pic/user.png"));
         mejeri.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         chark.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         grönsaker.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         bröd.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         kryddor.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         godis.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        dryckButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
 
     }
 
@@ -378,6 +404,9 @@ public class ImatMainController implements Initializable {
         flowPane.getChildren().clear();
         page_label.setText("Favorit");
         ItemsCardsController itemsCardsController;
+        setAllButtonsBlue();
+        favoritButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+        favoritIcon.setImage(new Image("/pic/starwhite.png"));
         for (Product p : iMatDataHandler.favorites()) {
             itemsCardsController = new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false);
             itemsCardsController.favorit.setImage(new Image("pic/star (1).png"));
@@ -570,6 +599,9 @@ public class ImatMainController implements Initializable {
         ShoppingCartItem shoppingCartItem;
         antal.setVisible(true);
         flowPane.getChildren().clear();
+        setAllButtonsBlue();
+        varukorgButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+        varukorgIcon.setImage(new Image("/pic/shopping-cartwhite.png"));
 
         page_label.setText("Varukorg");
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
