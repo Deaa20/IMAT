@@ -168,6 +168,8 @@ public class ImatMainController implements Initializable {
     @FXML ImageView kontoIcon;
     @FXML ImageView historikIcon;
 
+    @FXML Label titel;
+
 
 
 
