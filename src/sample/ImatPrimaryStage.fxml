@@ -814,7 +814,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Button fx:id="setHome" alignment="BASELINE_LEFT" layoutX="184.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setHome" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
+                        <Button fx:id="homeButton" alignment="BASELINE_LEFT" layoutX="184.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setHome" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
                            <font>
                               <Font name="Arial Bold" size="21.0" />
                            </font>
@@ -846,7 +846,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="TEXT_ONLY" layoutX="404.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
+                        <Button fx:id="historikButton" alignment="BASELINE_LEFT" contentDisplay="TEXT_ONLY" layoutX="404.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Historik">
                            <font>
                               <Font name="Arial Bold" size="21.0" />
                            </font>
@@ -874,7 +874,7 @@
                               <Image url="@../pic/user.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="272.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="homeIcon" fitHeight="35.0" fitWidth="41.0" layoutX="272.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../pic/home.png" />
                            </image>

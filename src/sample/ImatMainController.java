@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
 
@@ -66,8 +68,7 @@ public class ImatMainController implements Initializable {
 
     @FXML
     TextField searchFilter;
-    @FXML
-    Button historik;
+
     @FXML
     Button konto;
 
@@ -180,6 +181,16 @@ public class ImatMainController implements Initializable {
      @FXML Label  totPriceVaro;
     @FXML Label  totPriceVaro1;
     @FXML Button tömmaVarukorgen;
+
+    @FXML Button historikButton;
+    @FXML Button homeButton;
+    @FXML Button favoritButton;
+
+    @FXML ImageView homeIcon;
+    @FXML ImageView favoritIcon;
+    @FXML ImageView varukorgIcon;
+    @FXML ImageView kontoIcon;
+
 
 
 
@@ -359,12 +370,30 @@ public class ImatMainController implements Initializable {
         tömmaVarukorgen.setVisible(false);
         flowPane.getChildren().clear();
         page_label.setText("Historik");
+        setAllButtonsBlue();
+        historikButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+
         for (Order o : orderList) {
             flowPane.getChildren().add(new historikCardsController(
                     iMatDataHandler, this, o));
         }
         setItemsFlow();
     }
+
+    public void setAllButtonsBlue() {
+        historikButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        homeButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        homeIcon.setImage(new Image("/pic/home.png"));
+        konto.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        mejeri.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        chark.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        grönsaker.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        bröd.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        kryddor.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        godis.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+
+    }
+
 
     @FXML
     public void setFavoritCards() {
@@ -457,6 +486,10 @@ public class ImatMainController implements Initializable {
     @FXML
     private  void setHome(){
         antal.setVisible(false);
+
+        setAllButtonsBlue();
+        homeButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+        homeIcon.setImage(new Image("/pic/homewhite.png"));
 
         startFlow.getChildren().clear();
         ItemsCardsController itemsCardsController;
