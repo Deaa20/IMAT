@@ -185,11 +185,13 @@ public class ImatMainController implements Initializable {
     @FXML Button historikButton;
     @FXML Button homeButton;
     @FXML Button favoritButton;
+    @FXML Button varukorgButton;
 
     @FXML ImageView homeIcon;
     @FXML ImageView favoritIcon;
     @FXML ImageView varukorgIcon;
     @FXML ImageView kontoIcon;
+    @FXML ImageView historikIcon;
 
 
 
@@ -372,6 +374,7 @@ public class ImatMainController implements Initializable {
         page_label.setText("Historik");
         setAllButtonsBlue();
         historikButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+        historikIcon.setImage(new Image("/pic/documentwhite.png"));
 
         for (Order o : orderList) {
             flowPane.getChildren().add(new historikCardsController(
@@ -382,9 +385,13 @@ public class ImatMainController implements Initializable {
 
     public void setAllButtonsBlue() {
         historikButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        historikIcon.setImage(new Image("/pic/document.png"));
         homeButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         homeIcon.setImage(new Image("/pic/home.png"));
+        varukorgButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        varukorgIcon.setImage(new Image("/pic/shopping-cart.png"));
         konto.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+        kontoIcon.setImage(new Image("/pic/user.png"));
         mejeri.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         chark.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         grönsaker.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
@@ -404,6 +411,8 @@ public class ImatMainController implements Initializable {
         flowPane.getChildren().clear();
         page_label.setText("Favorit");
         ItemsCardsController itemsCardsController;
+        favoritButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+        favoritIcon.setImage(new Image("/pic/star.png"));
         for (Product p : iMatDataHandler.favorites()) {
             itemsCardsController = new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false);
             itemsCardsController.favorit.setImage(new Image("pic/star (1).png"));
