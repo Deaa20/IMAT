@@ -90,6 +90,7 @@ public class ShoppingCartItem extends AnchorPane {
 
         shoppingItem.setAmount(shoppingItem.getAmount()+1);
         imatMainController.setCartCards();
+        imatMainController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
     @FXML
@@ -98,6 +99,7 @@ public class ShoppingCartItem extends AnchorPane {
             shoppingItem.setAmount(shoppingItem.getAmount()+-1);
             imatMainController.setCartCards();
             imatMainController.setCartCards();
+            imatMainController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
         }
     }
 }

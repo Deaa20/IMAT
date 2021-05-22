@@ -169,7 +169,8 @@ public class ImatMainController implements Initializable {
     @FXML ImageView historikIcon;
 
     @FXML Label titel;
-
+    @FXML Label sparadLabel;
+    @FXML Label totPriceMain;
 
 
 
@@ -393,7 +394,6 @@ public class ImatMainController implements Initializable {
         kryddor.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         godis.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         dryckButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
-
     }
 
 
@@ -506,6 +506,10 @@ public class ImatMainController implements Initializable {
 
     }
 
+    public void setSparadLabelInvisible() {
+        sparadLabel.setVisible(false);
+    }
+
     public void saveKonto(){
         kontoUppgifterScen.toFront();
 
@@ -538,7 +542,7 @@ public class ImatMainController implements Initializable {
             updateKontoInfo();
            cvvError.setText("Ogiltig input, skriv gärna CVV med siffror");
         }
-
+        sparadLabel.setVisible(true);
         updateKontoInfo();
 
     }

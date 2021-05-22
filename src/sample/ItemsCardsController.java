@@ -130,6 +130,8 @@ public class ItemsCardsController extends AnchorPane {
         parentController.cardImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         parentController.detInfoPris.setText(productPrice.getText());
         parentController.titel.setText(iMatDataHandler.getProduct(id).getName());
+        parentController.antal.setDisable(false);
+        parentController.antal.setVisible(true);
 
     }
 
@@ -146,6 +148,7 @@ public class ItemsCardsController extends AnchorPane {
             getShopingitem().setAmount((getShopingitem().getAmount()+antalInt)-1);
 
         }
+        parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
 
@@ -207,6 +210,7 @@ public class ItemsCardsController extends AnchorPane {
         private void plusAntal () {
             antalInt++;
             antalLabel.setText(antalInt + "");
+            parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
         }
 
         @FXML
@@ -214,6 +218,7 @@ public class ItemsCardsController extends AnchorPane {
             if (antalInt > 0) {
                 antalInt--;
                 antalLabel.setText(antalInt + "");
+                parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
             }
         }
     }
