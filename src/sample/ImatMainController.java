@@ -82,6 +82,7 @@ public class ImatMainController implements Initializable {
     @FXML
     SplitPane mainScen;
     @FXML SplitPane categories;
+    @FXML AnchorPane bekraftelse;
 
     @FXML
     ImageView exit;
@@ -209,6 +210,7 @@ public class ImatMainController implements Initializable {
     }
 
     public void getMainScen(Event event) {
+        categories.toFront();
         mainScen.toFront();
         setHome();
 
@@ -364,6 +366,7 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void setHistorikCards() {
+        categories.toFront();
         betalaLabel.setVisible(false);
         antal.setDisable(true);
         totPriceVaro.setVisible(false);
@@ -404,6 +407,7 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void setFavoritCards() {
+        categories.toFront();
         betalaLabel.setVisible(false);
         antal.setDisable(false);
         totPriceVaro.setVisible(false);
@@ -572,6 +576,7 @@ public class ImatMainController implements Initializable {
 
     @FXML
     public void setCartCards() {
+        categories.toFront();
         betalaLabel.setVisible(true);
         totPriceVaro.setVisible(true);
         tömmaVarukorgen.setVisible(true);
@@ -597,7 +602,7 @@ public class ImatMainController implements Initializable {
     @FXML public void placeNow(){
         iMatDataHandler.placeOrder();
         flowPane.getChildren().clear();
-        categories.toFront();
+        bekraftelse.toFront();
     }
 
 
