@@ -80,7 +80,8 @@ public class ImatMainController implements Initializable {
     @FXML
     AnchorPane infoScen;
     @FXML
-    AnchorPane mainScen;
+    SplitPane mainScen;
+    @FXML SplitPane categories;
 
     @FXML
     ImageView exit;
@@ -172,7 +173,8 @@ public class ImatMainController implements Initializable {
     @FXML Label sparadLabel;
     @FXML Label totPriceMain;
 
-
+    @FXML RadioButton VISAButton;
+    @FXML RadioButton MCButton;
 
 
 
@@ -195,6 +197,10 @@ public class ImatMainController implements Initializable {
         antalLabel.setText(antalInt+"");
         setHome();
 
+        ToggleGroup cardTypeButtons = new ToggleGroup();
+
+        VISAButton.setToggleGroup(cardTypeButtons);
+        MCButton.setToggleGroup(cardTypeButtons);
     }
 
     public void getInfoScen() {
@@ -203,7 +209,6 @@ public class ImatMainController implements Initializable {
     }
 
     public void getMainScen(Event event) {
-
         mainScen.toFront();
         setHome();
 
@@ -592,7 +597,7 @@ public class ImatMainController implements Initializable {
     @FXML public void placeNow(){
         iMatDataHandler.placeOrder();
         flowPane.getChildren().clear();
-        mainScen.toFront();
+        categories.toFront();
     }
 
 

@@ -76,12 +76,16 @@ public class ShoppingCartItem extends AnchorPane {
     }
 
     public void removeFromCart(){
+        iMatDataHandler.getShoppingCart().removeItem(shoppingItem);
+        imatMainController.setCartCards();
+        imatMainController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
     public void removeAllFromCart(){
         iMatDataHandler.getShoppingCart().clear();
         imatMainController.flowPane.getChildren().clear();
         imatMainController.flowPane1.getChildren().clear();
+        imatMainController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
 
@@ -95,11 +99,13 @@ public class ShoppingCartItem extends AnchorPane {
 
     @FXML
     private void minusAntal () {
-        if (shoppingItem.getAmount() > 0) {
+        if (shoppingItem.getAmount() > 1) {
             shoppingItem.setAmount(shoppingItem.getAmount()+-1);
             imatMainController.setCartCards();
             imatMainController.setCartCards();
             imatMainController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        } else if (shoppingItem.getAmount() == 1) {
+            removeFromCart();
         }
     }
 }
