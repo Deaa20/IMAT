@@ -50,6 +50,8 @@ public class ItemsCardsController extends AnchorPane {
     ImageView minus;
     @FXML
     Label amount;
+    @FXML
+    Button addTo;
 
 
 
@@ -59,7 +61,7 @@ public class ItemsCardsController extends AnchorPane {
     @FXML Label totText;
     @FXML ImageView removeItemCart;
 
-    int antalInt = 1;
+   // int antalInt = 1;
 
 
 
@@ -105,7 +107,6 @@ public class ItemsCardsController extends AnchorPane {
             ecoImage.setImage(new Image("pic/eco.png"));
         }
 
-        antalLabel.setText(antalInt+"");
 
 
 
@@ -139,26 +140,11 @@ public class ItemsCardsController extends AnchorPane {
 
     @FXML
     public void addToCart() {
+        addTo.setVisible(false);
+     //   antalLabel.setText(getShopingitem().getAmount()+"");
+       // Product p = iMatDataHandler.getProduct(id);
 
-        Product p = iMatDataHandler.getProduct(id);
-        if(isThere()){
-            getShopingitem().setAmount((getShopingitem().getAmount()+antalInt)-1);
-        }
-        else {
 
-            iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(id));
-            getShopingitem().setAmount((getShopingitem().getAmount()+antalInt)-1);
-
-        }
-        parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
-        parentController.priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
-        parentController.totPriceMain.setStyle("-fx-font-weight: 700");
-        PauseTransition pause = new PauseTransition(Duration.seconds(0.6));
-        pause.setOnFinished(event -> {
-            parentController.priceCounterCircle.setStyle("-fx-fill: #e2f1ff;");
-            parentController.totPriceMain.setStyle("-fx-font-weight: 500");
-        });
-        pause.play();
     }
 
 
@@ -218,17 +204,48 @@ public class ItemsCardsController extends AnchorPane {
 
         @FXML
         private void plusAntal () {
-            antalInt++;
-            antalLabel.setText(antalInt + "");
+
+
+
+            if(isThere()){
+                getShopingitem().setAmount(getShopingitem().getAmount()+1);
+            }
+            else {
+                iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(id));
+
+            }
+
+            antalLabel.setText((int)getShopingitem().getAmount() + "");
             parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+            parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+            parentController.priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
+            parentController.totPriceMain.setStyle("-fx-font-weight: 700");
+            PauseTransition pause = new PauseTransition(Duration.seconds(0.6));
+            pause.setOnFinished(event -> {
+                parentController.priceCounterCircle.setStyle("-fx-fill: #e2f1ff;");
+                parentController.totPriceMain.setStyle("-fx-font-weight: 500");
+            });
+            pause.play();
         }
 
         @FXML
         private void minusAntal () {
-            if (antalInt > 0) {
-                antalInt--;
-                antalLabel.setText(antalInt + "");
-                parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+            if (getShopingitem().getAmount() > 0) {
+                if(isThere()){
+                    getShopingitem().setAmount(getShopingitem().getAmount()-1);
+                    antalLabel.setText((int)getShopingitem().getAmount() + "");
+                    parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+                    parentController.priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
+                    parentController.totPriceMain.setStyle("-fx-font-weight: 700");
+                    PauseTransition pause = new PauseTransition(Duration.seconds(0.6));
+                    pause.setOnFinished(event -> {
+                        parentController.priceCounterCircle.setStyle("-fx-fill: #e2f1ff;");
+                        parentController.totPriceMain.setStyle("-fx-font-weight: 500");
+                    });
+                    pause.play();
+                }
+
+
             }
         }
     }
