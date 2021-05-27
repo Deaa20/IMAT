@@ -336,7 +336,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="29.0" onMouseClicked="#setHistorikCards" text="000.00 kr" textAlignment="CENTER">
+                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="29.0" onMouseClicked="#setHistorikCards" prefHeight="20.0" prefWidth="57.0" text="000.00kr" textAlignment="CENTER">
                            <font>
                               <Font size="14.0" />
                            </font>
