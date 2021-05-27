@@ -626,6 +626,7 @@ public class ImatMainController implements Initializable {
         iMatDataHandler.placeOrder();
         flowPane.getChildren().clear();
         bekraftelse.toFront();
+        totPriceMain.setText("0.0 kr");
     }
 
 
