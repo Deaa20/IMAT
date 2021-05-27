@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -149,6 +151,14 @@ public class ItemsCardsController extends AnchorPane {
 
         }
         parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        parentController.priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
+        parentController.totPriceMain.setStyle("-fx-font-weight: 700");
+        PauseTransition pause = new PauseTransition(Duration.seconds(0.6));
+        pause.setOnFinished(event -> {
+            parentController.priceCounterCircle.setStyle("-fx-fill: #e2f1ff;");
+            parentController.totPriceMain.setStyle("-fx-font-weight: 500");
+        });
+        pause.play();
     }
 
 

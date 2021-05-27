@@ -144,7 +144,7 @@
                               <Font name="Arial Bold" size="23.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="19.0" layoutY="303.0" prefHeight="27.0" prefWidth="197.0" text="Perssonnummer:">
+                        <Label alignment="CENTER_RIGHT" layoutX="19.0" layoutY="303.0" prefHeight="27.0" prefWidth="197.0" text="Personnummer:">
                            <font>
                               <Font name="Arial Bold" size="23.0" />
                            </font>
@@ -203,18 +203,54 @@
                               <Font name="Arial Black" size="31.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="namnKonto" layoutX="233.0" layoutY="206.0" prefHeight="26.0" prefWidth="251.0" />
-                        <TextField fx:id="efterNamnKonto" layoutX="232.0" layoutY="257.0" prefHeight="26.0" prefWidth="251.0" />
-                        <TextField layoutX="233.0" layoutY="304.0" prefHeight="25.0" prefWidth="251.0" />
-                        <TextField fx:id="telefonnummerKonto" layoutX="233.0" layoutY="344.0" prefHeight="25.0" prefWidth="251.0" />
-                        <TextField fx:id="epostAdressKonto" layoutX="233.0" layoutY="387.0" prefHeight="25.0" prefWidth="251.0" />
-                        <TextField fx:id="adressKonto" layoutX="233.0" layoutY="480.0" prefHeight="25.0" prefWidth="251.0" />
-                        <TextField fx:id="postnummerKonto" layoutX="233.0" layoutY="530.0" prefHeight="25.0" prefWidth="251.0" />
-                        <TextField fx:id="kortnummerKonto" layoutX="708.0" layoutY="203.0" prefHeight="25.0" prefWidth="426.0" />
-                        <TextField fx:id="giltigTillMonthKonto" layoutX="708.0" layoutY="257.0" prefHeight="25.0" prefWidth="103.0" />
-                        <TextField fx:id="giltigTillYearKonto" layoutX="824.0" layoutY="257.0" prefHeight="25.0" prefWidth="94.0" />
-                        <TextField fx:id="cvvKonto" layoutX="708.0" layoutY="304.0" prefHeight="26.0" prefWidth="103.0" />
-                        <TextField fx:id="korthållareKonto" layoutX="708.0" layoutY="354.0" prefHeight="25.0" prefWidth="426.0" />
+                        <TextField fx:id="namnKonto" layoutX="233.0" layoutY="206.0" prefHeight="26.0" prefWidth="251.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="efterNamnKonto" layoutX="232.0" layoutY="257.0" prefHeight="26.0" prefWidth="251.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField layoutX="232.0" layoutY="304.0" prefHeight="25.0" prefWidth="251.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="telefonnummerKonto" layoutX="233.0" layoutY="344.0" prefHeight="25.0" prefWidth="251.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="epostAdressKonto" layoutX="233.0" layoutY="387.0" prefHeight="25.0" prefWidth="251.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="adressKonto" layoutX="233.0" layoutY="480.0" prefHeight="25.0" prefWidth="251.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="postnummerKonto" layoutX="233.0" layoutY="530.0" prefHeight="25.0" prefWidth="251.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="kortnummerKonto" layoutX="708.0" layoutY="203.0" prefHeight="25.0" prefWidth="426.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="giltigTillMonthKonto" layoutX="708.0" layoutY="257.0" prefHeight="25.0" prefWidth="103.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="giltigTillYearKonto" layoutX="824.0" layoutY="257.0" prefHeight="25.0" prefWidth="94.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="cvvKonto" layoutX="708.0" layoutY="304.0" prefHeight="26.0" prefWidth="103.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="korthållareKonto" layoutX="708.0" layoutY="354.0" prefHeight="25.0" prefWidth="426.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
                         <Label fx:id="cvvError" layoutX="708.0" layoutY="348.0" prefHeight="17.0" prefWidth="426.0" />
                         <Label fx:id="giltigError" layoutX="708.0" layoutY="299.0" prefHeight="17.0" prefWidth="426.0" />
                         <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="1074.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
@@ -331,7 +367,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Circle fill="#e2f1ff" layoutX="972.0" layoutY="38.0" onMouseClicked="#setCartCards" radius="32.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fx:id="priceCounterCircle" fill="#e2f1ff" layoutX="972.0" layoutY="38.0" onMouseClicked="#setCartCards" radius="32.0" stroke="BLACK" strokeType="INSIDE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -348,46 +384,6 @@
                   </AnchorPane>
                   <StackPane prefHeight="150.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane fx:id="bekraftelse" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-                           <children>
-                              <Label layoutX="185.0" layoutY="86.0" text="Din beställning är lagd!">
-                                 <font>
-                                    <Font name="System Bold" size="48.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" layoutX="182.0" layoutY="186.0" prefHeight="106.0" prefWidth="806.0" text="Dina varor kommer fredag den 28:de maj mellan klockan 17-22" wrapText="true">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="182.0" layoutY="325.0" text="Vi har skickat en bekräftelse till din mail.">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="182.0" layoutY="418.0" prefHeight="113.0" prefWidth="806.0" text="Tack för att du handlat genom iMat och välkommen åter!" wrapText="true">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="homeButton1" alignment="BASELINE_LEFT" layoutX="852.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#getMainScen" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
-                                 <font>
-                                    <Font name="Arial Bold" size="21.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                              <ImageView fx:id="homeIcon1" fitHeight="26.0" fitWidth="27.0" layoutX="940.0" layoutY="573.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../pic/home.png" />
-                                 </image>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane fx:id="payscen" prefHeight="656.0" prefWidth="1191.0" style="-fx-background-color: #000000;">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
@@ -529,20 +525,68 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </RadioButton>
-                                          <TextField fx:id="betName" layoutX="400.0" layoutY="606.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betLastName" layoutX="400.0" layoutY="637.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betSecnum" layoutX="400.0" layoutY="672.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betPhonenum" layoutX="400.0" layoutY="706.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betEmail" layoutX="400.0" layoutY="741.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betAdress" layoutX="400.0" layoutY="817.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betPostcode" layoutX="400.0" layoutY="852.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betCardnum" layoutX="400.0" layoutY="1076.0" prefHeight="26.0" prefWidth="642.0" />
-                                          <TextField fx:id="betCardDate" alignment="CENTER_RIGHT" layoutX="400.0" layoutY="1111.0" prefHeight="26.0" prefWidth="135.0" promptText="MM" />
-                                          <TextField fx:id="betCVV" layoutX="400.0" layoutY="1144.0" prefHeight="26.0" prefWidth="135.0" />
-                                          <TextField fx:id="betCardHolder" layoutX="400.0" layoutY="1179.0" prefHeight="26.0" prefWidth="642.0" />
+                                          <TextField fx:id="betName" layoutX="400.0" layoutY="604.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betLastName" layoutX="400.0" layoutY="638.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betSecnum" layoutX="400.0" layoutY="672.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betPhonenum" layoutX="400.0" layoutY="706.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betEmail" layoutX="400.0" layoutY="741.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betAdress" layoutX="400.0" layoutY="817.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betPostcode" layoutX="400.0" layoutY="852.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betCardnum" layoutX="400.0" layoutY="1076.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betCardDate" alignment="CENTER_RIGHT" layoutX="400.0" layoutY="1111.0" prefHeight="26.0" prefWidth="135.0" promptText="MM">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betCVV" layoutX="400.0" layoutY="1144.0" prefHeight="26.0" prefWidth="135.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="betCardHolder" layoutX="400.0" layoutY="1179.0" prefHeight="26.0" prefWidth="642.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
                                           <Line endX="730.4000244140625" endY="525.199951171875" layoutX="395.0" layoutY="854.0" startX="730.4000244140625" startY="-794.0" visible="false" />
                                           <Line endX="-1.52587890625E-5" endY="969.5999755859375" layoutX="151.0" layoutY="392.0" startY="-332.0" visible="false" />
-                                          <TextField fx:id="betCardYear" layoutX="586.0" layoutY="1111.0" prefHeight="26.0" prefWidth="135.0" promptText="YY" />
+                                          <TextField fx:id="betCardYear" layoutX="586.0" layoutY="1111.0" prefHeight="26.0" prefWidth="135.0" promptText="YY">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
                                           <Line endX="91.4000244140625" endY="-109.199951171875" layoutX="485.0" layoutY="1223.0" startX="63.4000244140625" startY="-86.0" />
                                        </children>
                                     </AnchorPane>
@@ -550,11 +594,51 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
+                        <AnchorPane fx:id="bekraftelse" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <Label layoutX="185.0" layoutY="86.0" text="Din beställning är lagd!">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="182.0" layoutY="186.0" prefHeight="106.0" prefWidth="806.0" text="Dina varor kommer fredag den 28:de maj mellan klockan 17-22" wrapText="true">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="182.0" layoutY="325.0" text="Vi har skickat en bekräftelse till din mail.">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="182.0" layoutY="418.0" prefHeight="113.0" prefWidth="806.0" text="Tack för att du handlat genom iMat och välkommen åter!" wrapText="true">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="homeButton1" alignment="BASELINE_LEFT" layoutX="852.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#getMainScen" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fx:id="homeIcon1" fitHeight="26.0" fitWidth="27.0" layoutX="940.0" layoutY="573.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../pic/home.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
                         <SplitPane fx:id="categories" dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
                           <items>
                             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="662.0" prefWidth="183.0" style="-fx-background-color: #ffffff;" styleClass="background">
                                  <children>
-                                    <Button fx:id="mejeri" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Mejeri">
+                                    <Button id="blueButtons" fx:id="mejeri" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="97.0" stylesheets="@button.css" text="Mejeri">
                                        <font>
                                           <Font name="Arial Bold" size="15.0" />
                                        </font>
@@ -562,7 +646,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <Button fx:id="chark" layoutX="32.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="97.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Chark">
+                                    <Button id="blueButtons" fx:id="chark" layoutX="32.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="97.0" stylesheets="@button.css" text="Chark">
                                        <font>
                                           <Font name="Arial Bold" size="15.0" />
                                        </font>
@@ -614,56 +698,6 @@
                               </AnchorPane>
                               <StackPane prefHeight="150.0" prefWidth="200.0">
                                  <children>
-                                  <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
-                                       <children>
-                                          <ScrollPane fitToWidth="true" layoutX="6.0" layoutY="104.0" prefHeight="471.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="72.0" AnchorPane.topAnchor="104.0">
-                                             <content>
-                                                <FlowPane fx:id="flowPane" prefHeight="539.0" prefWidth="1003.0" />
-                                             </content>
-                                          </ScrollPane>
-                                          <Label fx:id="page_label" layoutX="10.0" layoutY="60.0" prefHeight="43.0" prefWidth="277.0" text="Label">
-                                             <font>
-                                                <Font name="System Bold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="searchFilter" layoutX="234.0" layoutY="14.0" onKeyTyped="#setSearchFilter" prefHeight="34.0" prefWidth="758.0" promptText="Sök här...">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                             <effect>
-                                                <DropShadow offsetX="1.0" offsetY="1.0" spread="0.05" />
-                                             </effect>
-                                          </TextField>
-                                          <Button fx:id="betalaLabel" alignment="CENTER" layoutX="642.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="40.0" prefWidth="181.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                          </Button>
-                                          <Label fx:id="totPriceVaro" layoutX="864.0" layoutY="595.0" prefHeight="34.0" prefWidth="113.0" text="0.0 kr">
-                                             <font>
-                                                <Font name="Arial Bold" size="21.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="tömmaVarukorgen" alignment="CENTER" layoutX="15.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="40.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
-                                             <font>
-                                                <Font name="Arial Bold" size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Label layoutX="626.0" layoutY="64.0" prefHeight="35.0" prefWidth="208.0" text="Total Pris i varukorgen: ">
-                                             <font>
-                                                <Font name="Arial Bold" size="18.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="totPriceMain123" layoutX="851.0" layoutY="64.0" prefHeight="35.0" prefWidth="113.0" text="0.0 kr">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="homeAnchor" prefHeight="619.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
                                        <children>
                                           <Label alignment="TOP_CENTER" layoutX="236.0" layoutY="4.0" prefHeight="42.0" prefWidth="489.0" text="Välkomen till IMAT">
@@ -712,6 +746,46 @@
                                                 <DropShadow offsetX="1.0" offsetY="1.0" spread="0.08" />
                                              </effect>
                                           </TextField>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <ScrollPane fitToWidth="true" layoutX="6.0" layoutY="104.0" prefHeight="471.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="72.0" AnchorPane.topAnchor="104.0">
+                                             <content>
+                                                <FlowPane fx:id="flowPane" prefHeight="539.0" prefWidth="1003.0" />
+                                             </content>
+                                          </ScrollPane>
+                                          <Label fx:id="page_label" layoutX="10.0" layoutY="60.0" prefHeight="43.0" prefWidth="277.0" text="Label">
+                                             <font>
+                                                <Font name="System Bold" size="26.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="searchFilter" layoutX="234.0" layoutY="14.0" onKeyTyped="#setSearchFilter" prefHeight="34.0" prefWidth="758.0" promptText="Sök här...">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow offsetX="1.0" offsetY="1.0" spread="0.05" />
+                                             </effect>
+                                          </TextField>
+                                          <Button fx:id="betalaLabel" alignment="CENTER" layoutX="642.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="40.0" prefWidth="181.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Label fx:id="totPriceVaro" layoutX="864.0" layoutY="595.0" prefHeight="34.0" prefWidth="113.0" text="0.0 kr">
+                                             <font>
+                                                <Font name="Arial Bold" size="21.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="tömmaVarukorgen" alignment="CENTER" layoutX="15.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="40.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
+                                             <font>
+                                                <Font name="Arial Bold" size="18.0" />
+                                             </font>
+                                          </Button>
                                        </children>
                                     </AnchorPane>
                                  </children>
