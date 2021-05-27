@@ -177,10 +177,19 @@ public class ImatMainController implements Initializable {
     @FXML RadioButton VISAButton;
     @FXML RadioButton MCButton;
 
-
-
-
-
+    @FXML TextField betName;
+    @FXML TextField betLastName;
+    @FXML TextField betSecnum;
+    @FXML TextField betPhonenum;
+    @FXML TextField betEmail;
+    @FXML TextField betAdress;
+    @FXML TextField betPostcode;
+    @FXML TextField betCardtype;
+    @FXML TextField betCardnum;
+    @FXML TextField betCardDate;
+    @FXML TextField betCardYear;
+    @FXML TextField betCVV;
+    @FXML TextField betCardHolder;
 
 
 
@@ -199,6 +208,8 @@ public class ImatMainController implements Initializable {
         setHome();
 
         ToggleGroup cardTypeButtons = new ToggleGroup();
+
+        totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal()+ " kr");
 
         VISAButton.setToggleGroup(cardTypeButtons);
         MCButton.setToggleGroup(cardTypeButtons);
@@ -562,6 +573,18 @@ public class ImatMainController implements Initializable {
 
     public void getPayScen(Event event) {
         payscen.toFront();
+        betName.setText(iMatDataHandler.getCustomer().getFirstName());
+        betLastName.setText(iMatDataHandler.getCustomer().getLastName());
+        //betSecnum.setText(iMatDataHandler.getCustomer().get);
+        betPhonenum.setText(iMatDataHandler.getCustomer().getPhoneNumber());
+        betEmail.setText(iMatDataHandler.getCustomer().getEmail());
+        betAdress.setText(iMatDataHandler.getCustomer().getAddress());
+        betPostcode.setText(iMatDataHandler.getCustomer().getPostCode());
+        betCardnum.setText(iMatDataHandler.getCreditCard().getCardNumber());
+        betCardDate.setText(String.valueOf(iMatDataHandler.getCreditCard().getValidMonth()));
+        betCardYear.setText(String.valueOf(iMatDataHandler.getCreditCard().getValidYear()));
+        betCVV.setText(String.valueOf(iMatDataHandler.getCreditCard().getVerificationCode()));
+        betCardHolder.setText(iMatDataHandler.getCreditCard().getHoldersName());
 
         flowpay.getChildren().clear();
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
