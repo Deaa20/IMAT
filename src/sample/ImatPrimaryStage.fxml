@@ -331,12 +331,12 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Circle fill="#e2f1ff" layoutX="972.0" layoutY="38.0" onMouseClicked="#setHistorikCards" radius="32.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fill="#e2f1ff" layoutX="972.0" layoutY="38.0" onMouseClicked="#setCartCards" radius="32.0" stroke="BLACK" strokeType="INSIDE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="28.0" onMouseClicked="#setHistorikCards" prefHeight="20.0" prefWidth="57.0" text="000.00kr" textAlignment="CENTER">
+                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="28.0" onMouseClicked="#setCartCards" prefHeight="20.0" prefWidth="57.0" text="000.00kr" textAlignment="CENTER">
                            <font>
                               <Font size="14.0" />
                            </font>
