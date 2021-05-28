@@ -23,7 +23,7 @@
 
 <AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
-      <StackPane prefHeight="745.0" prefWidth="1188.0">
+      <StackPane>
          <children>
             <AnchorPane fx:id="kontoUppgifterScen" prefHeight="742.0" prefWidth="1191.0">
                <children>
@@ -223,6 +223,67 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
+               <children>
+                  <AnchorPane layoutX="105.0" layoutY="102.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="orderNummerDet" layoutX="199.0" layoutY="11.0" prefHeight="35.0" prefWidth="113.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="781.0" layoutY="517.0" text="Tot.Pris">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="datumDet" layoutX="429.0" layoutY="11.0" prefHeight="35.0" prefWidth="230.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="23.0" layoutY="11.0" text="Ordernummer:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totPrisDet" layoutX="893.0" layoutY="517.0" prefHeight="35.0" prefWidth="113.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane layoutX="4.0" layoutY="58.0" prefHeight="449.0" prefWidth="1018.0">
+                           <content>
+                              <FlowPane fx:id="histoFlow" prefHeight="447.0" prefWidth="1011.0" />
+                           </content>
+                        </ScrollPane>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="968.0" layoutY="9.0" onMouseClicked="#setHistDetBack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" style="-fx-background-color: #5BE972;" text="Tillagd!">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="orderToCartLabel" layoutX="23.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#orderToCart" style="-fx-background-color: #5697EF;" text="Lägg till order i varukorgen">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>
@@ -746,17 +807,17 @@
                                           </AnchorPane>
                                         <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
                                              <children>
-                                                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="6.0" layoutY="104.0" prefHeight="471.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="72.0" AnchorPane.topAnchor="104.0">
+                                                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="5.0" layoutY="58.0" prefHeight="471.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="118.0" AnchorPane.topAnchor="58.0">
                                                    <content>
                                                       <FlowPane fx:id="flowPane" prefHeight="539.0" prefWidth="1003.0" />
                                                    </content>
                                                 </ScrollPane>
-                                                <Label fx:id="page_label" layoutX="10.0" layoutY="60.0" prefHeight="43.0" prefWidth="277.0" text="Label">
+                                                <Label fx:id="page_label" layoutX="9.0" layoutY="14.0" prefHeight="43.0" prefWidth="277.0" text="Label">
                                                    <font>
                                                       <Font name="System Bold" size="26.0" />
                                                    </font>
                                                 </Label>
-                                                <Button fx:id="betalaLabel" alignment="CENTER" layoutX="642.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="40.0" prefWidth="181.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
+                                                <Button fx:id="betalaLabel" alignment="CENTER" layoutX="641.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="40.0" prefWidth="181.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
                                                    <font>
                                                       <Font name="Arial Bold" size="20.0" />
                                                    </font>
@@ -764,12 +825,12 @@
                                                       <Cursor fx:constant="HAND" />
                                                    </cursor>
                                                 </Button>
-                                                <Label fx:id="totPriceVaro" layoutX="864.0" layoutY="595.0" prefHeight="34.0" prefWidth="113.0" text="0.0 kr">
+                                                <Label fx:id="totPriceVaro" layoutX="863.0" layoutY="549.0" prefHeight="34.0" prefWidth="113.0" text="0.0 kr">
                                                    <font>
                                                       <Font name="Arial Bold" size="21.0" />
                                                    </font>
                                                 </Label>
-                                                <Button fx:id="tömmaVarukorgen" alignment="CENTER" layoutX="15.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="40.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
+                                                <Button fx:id="tömmaVarukorgen" alignment="CENTER" layoutX="14.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="40.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
                                                    <font>
                                                       <Font name="Arial Bold" size="18.0" />
                                                    </font>
@@ -789,67 +850,6 @@
                   </StackPane>
               </items>
             </SplitPane>
-            <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
-               <children>
-                  <AnchorPane layoutX="105.0" layoutY="102.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum:">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="orderNummerDet" layoutX="199.0" layoutY="11.0" prefHeight="35.0" prefWidth="113.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="781.0" layoutY="517.0" text="Tot.Pris">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="datumDet" layoutX="429.0" layoutY="11.0" prefHeight="35.0" prefWidth="230.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="23.0" layoutY="11.0" text="Ordernummer:">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="totPrisDet" layoutX="893.0" layoutY="517.0" prefHeight="35.0" prefWidth="113.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <ScrollPane layoutX="4.0" layoutY="58.0" prefHeight="449.0" prefWidth="1018.0">
-                           <content>
-                              <FlowPane fx:id="histoFlow" prefHeight="447.0" prefWidth="1011.0" />
-                           </content>
-                        </ScrollPane>
-                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="968.0" layoutY="9.0" onMouseClicked="#setHistDetBack" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/Close-512.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" style="-fx-background-color: #5BE972;" text="Tillagd!">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="orderToCartLabel" layoutX="23.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#orderToCart" style="-fx-background-color: #5697EF;" text="Lägg till order i varukorgen">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
          </children>
       </StackPane>
    </children>

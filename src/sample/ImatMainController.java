@@ -739,6 +739,8 @@ public class ImatMainController implements Initializable {
     public void emptyCart() {
         iMatDataHandler.getShoppingCart().clear();
         flowPane.getChildren().clear();
+        totPriceVaro.setText(String.valueOf(iMatDataHandler.getShoppingCart().getTotal()));
+        totPriceMain.setText(String.valueOf(iMatDataHandler.getShoppingCart().getTotal()));
     }
 
     public boolean isAlreadyInCart(int id) {
