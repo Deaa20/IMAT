@@ -143,7 +143,7 @@ public class ItemsCardsController extends AnchorPane {
         addTo.setVisible(false);
      //   antalLabel.setText(getShopingitem().getAmount()+"");
        // Product p = iMatDataHandler.getProduct(id);
-
+        plusAntal();
 
     }
 
@@ -215,7 +215,7 @@ public class ItemsCardsController extends AnchorPane {
 
             }
 
-            antalLabel.setText((int)getShopingitem().getAmount() + "");
+            antalLabel.setText((int)getShopingitem().getAmount() + " " + getShopingitem().getProduct().getUnitSuffix());
             parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
             parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
             parentController.priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
@@ -233,7 +233,7 @@ public class ItemsCardsController extends AnchorPane {
             if (getShopingitem().getAmount() > 0) {
                 if(isThere()){
                     getShopingitem().setAmount(getShopingitem().getAmount()-1);
-                    antalLabel.setText((int)getShopingitem().getAmount() + "");
+                    antalLabel.setText((int)getShopingitem().getAmount() + " " + getShopingitem().getProduct().getUnitSuffix());
                     parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
                     parentController.priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
                     parentController.totPriceMain.setStyle("-fx-font-weight: 700");

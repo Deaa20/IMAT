@@ -36,6 +36,8 @@ public class ShoppingCartItem extends AnchorPane {
 
     @FXML ImageView plusImage;
     @FXML ImageView minusImage;
+    @FXML ImageView ECOlabel;
+    @FXML ImageView papperskorg;
 
     int antalInt =1;
 
@@ -61,16 +63,27 @@ public class ShoppingCartItem extends AnchorPane {
 
         image.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         name.setText(iMatDataHandler.getProduct(id).getName());
+        ECOlabel.setImage(new Image("pic/eco.png"));
+        if (iMatDataHandler.getProduct(id).isEcological()){
+            ECOlabel.setVisible(true);
+        } else {
+            ECOlabel.setVisible(false);
+        }
+
+        price.setText(String.valueOf(s.getProduct().getPrice()) + " kr");
+        totPris.setText(s.getTotal()+" kr");
+        amount.setText(String.valueOf(s.getAmount()) + " " + s.getProduct().getUnitSuffix());
 
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
             if (shoppingItem.getProduct().equals(iMatDataHandler.getProduct(id))) {
                 System.out.println(shoppingItem.getAmount());
                 System.out.println(shoppingItem.getTotal() + "total");
-                price.setText((iMatDataHandler.getProduct(id).getPrice() + "kr"));
+                price.setText((iMatDataHandler.getProduct(id).getPrice() + " kr"));
 
 
             }
         }
+
        // price.setText(iMatDataHandler.getShoppingCart().getPrice()+ "kr");
         //from.setText(iMatDataHandler.getProduct(id).get);
     }
@@ -107,5 +120,21 @@ public class ShoppingCartItem extends AnchorPane {
         } else if (shoppingItem.getAmount() == 1) {
             removeFromCart();
         }
+    }
+
+    @FXML public void setAmountLabel(ShoppingItem s){
+        amount.setText(s.getAmount() + " " + iMatDataHandler.getProduct(id).getUnitSuffix());
+    }
+
+    @FXML public void Betalasida(){
+        minusImage.setVisible(false);
+        plusImage.setVisible(false);
+        papperskorg.setVisible(false);
+    }
+
+    @FXML public void Varukorg(){
+        minusImage.setVisible(true);
+        plusImage.setVisible(true);
+        papperskorg.setVisible(true);
     }
 }

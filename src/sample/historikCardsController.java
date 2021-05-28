@@ -91,7 +91,9 @@ private int setAntalVaror(){
 @FXML
 private  void setHistoDetButton(){
         imatMainController.setHistoDet(order,setTotPris());
+}
 
+@FXML public void orderToCart(){
 
 }
 

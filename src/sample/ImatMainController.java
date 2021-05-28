@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.animation.PauseTransition;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,8 +13,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.*;
-
 
 
 import java.net.URL;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class ImatMainController implements Initializable {
     //database
-   static IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
+    static IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
     private List<Order> orderList = iMatDataHandler.getOrders();
 
@@ -82,15 +83,13 @@ public class ImatMainController implements Initializable {
     AnchorPane infoScen;
     @FXML
     SplitPane mainScen;
-    @FXML SplitPane categories;
-    @FXML AnchorPane bekraftelse;
+    @FXML
+    SplitPane categories;
+    @FXML
+    AnchorPane bekraftelse;
 
     @FXML
     ImageView exit;
-
-
-
-
 
 
     @FXML
@@ -139,80 +138,123 @@ public class ImatMainController implements Initializable {
     @FXML
     Label ingaFav;
 
-    @FXML AnchorPane payscen;
-    @FXML FlowPane flowpay;
-    @FXML Button pay;
-    @FXML Label pricetot;
-    @FXML AnchorPane itemsAnchor1;
-    @FXML FlowPane flowPane1;
+    @FXML
+    AnchorPane payscen;
+    @FXML
+    FlowPane flowpay;
+    @FXML
+    Button pay;
+    @FXML
+    Label pricetot;
+    @FXML
+    AnchorPane itemsAnchor1;
+    @FXML
+    FlowPane flowPane1;
 
-    @FXML AnchorPane histoDet;
-    @FXML FlowPane histoFlow;
+    @FXML
+    AnchorPane histoDet;
+    @FXML
+    FlowPane histoFlow;
 
 
-    @FXML Label datumDet;
-    @FXML Label orderNummerDet;
-     @FXML Label totPrisDet;
+    @FXML
+    Label datumDet;
+    @FXML
+    Label orderNummerDet;
+    @FXML
+    Label totPrisDet;
 
-     @FXML Button betalaLabel;
-     @FXML Label  totPriceVaro;
-    @FXML Label  totPriceVaro1;
-    @FXML Button tömmaVarukorgen;
+    @FXML
+    Button betalaLabel;
+    @FXML
+    Label totPriceVaro;
+    @FXML
+    Label totPriceVaro1;
+    @FXML
+    Button tömmaVarukorgen;
 
-    @FXML Button historikButton;
-    @FXML Button homeButton;
-    @FXML Button favoritButton;
-    @FXML Button varukorgButton;
-    @FXML Button dryckButton;
+    @FXML
+    Button historikButton;
+    @FXML
+    Button homeButton;
+    @FXML
+    Button favoritButton;
+    @FXML
+    Button varukorgButton;
+    @FXML
+    Button dryckButton;
 
-    @FXML ImageView homeIcon;
-    @FXML ImageView favoritIcon;
-    @FXML ImageView varukorgIcon;
-    @FXML ImageView kontoIcon;
-    @FXML ImageView historikIcon;
+    @FXML
+    ImageView homeIcon;
+    @FXML
+    ImageView favoritIcon;
+    @FXML
+    ImageView varukorgIcon;
+    @FXML
+    ImageView kontoIcon;
+    @FXML
+    ImageView historikIcon;
 
-    @FXML Label titel;
-    @FXML Label sparadLabel;
-    @FXML Label totPriceMain;
+    @FXML
+    Label titel;
+    @FXML
+    Label sparadLabel;
+    @FXML
+    Label totPriceMain;
 
-    @FXML RadioButton VISAButton;
-    @FXML RadioButton MCButton;
+    @FXML
+    RadioButton VISAButton;
+    @FXML
+    RadioButton MCButton;
 
-    @FXML TextField betName;
-    @FXML TextField betLastName;
-    @FXML TextField betSecnum;
-    @FXML TextField betPhonenum;
-    @FXML TextField betEmail;
-    @FXML TextField betAdress;
-    @FXML TextField betPostcode;
-    @FXML TextField betCardtype;
-    @FXML TextField betCardnum;
-    @FXML TextField betCardDate;
-    @FXML TextField betCardYear;
-    @FXML TextField betCVV;
-    @FXML TextField betCardHolder;
+    @FXML
+    TextField betName;
+    @FXML
+    TextField betLastName;
+    @FXML
+    TextField betSecnum;
+    @FXML
+    TextField betPhonenum;
+    @FXML
+    TextField betEmail;
+    @FXML
+    TextField betAdress;
+    @FXML
+    TextField betPostcode;
+    @FXML
+    TextField betCardtype;
+    @FXML
+    TextField betCardnum;
+    @FXML
+    TextField betCardDate;
+    @FXML
+    TextField betCardYear;
+    @FXML
+    TextField betCVV;
+    @FXML
+    TextField betCardHolder;
 
-    @FXML Circle priceCounterCircle;
-
+    @FXML
+    Circle priceCounterCircle;
 
 
     int antalInt = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       // flowPane.setPrefWrapLength(2);
-       flowPane.setHgap(20);
+        // flowPane.setPrefWrapLength(2);
+        flowPane.setHgap(20);
         flowPane.setVgap(20);
         startFlow.setVgap(20);
         startFlow.setHgap(20);
         histoFlow.setHgap(20);
         histoFlow.setVgap(20);
-        antalLabel.setText(antalInt+"");
+        antalLabel.setText(antalInt + "");
         setHome();
 
         ToggleGroup cardTypeButtons = new ToggleGroup();
 
-        totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal()+ " kr");
+        totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
 
         VISAButton.setToggleGroup(cardTypeButtons);
         MCButton.setToggleGroup(cardTypeButtons);
@@ -234,9 +276,9 @@ public class ImatMainController implements Initializable {
     @FXML
     public void vegeFilter() {
         antal.setDisable(false);
-       betalaLabel.setVisible(false);
-       totPriceVaro.setVisible(false);
-       tömmaVarukorgen.setVisible(false);
+        betalaLabel.setVisible(false);
+        totPriceVaro.setVisible(false);
+        tömmaVarukorgen.setVisible(false);
         setAllButtonsBlue();
         grönsaker.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
@@ -245,17 +287,17 @@ public class ImatMainController implements Initializable {
         for (Product p : iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.BERRY))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.CITRUS_FRUIT))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.FRUIT))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.MELONS))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.ROOT_VEGETABLE))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         page_label.setText("Grönsaker & Frukt");
         setItemsFlow();
     }
@@ -271,7 +313,7 @@ public class ImatMainController implements Initializable {
         bröd.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.BREAD))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         page_label.setText("Bröd");
         setItemsFlow();
 
@@ -289,7 +331,7 @@ public class ImatMainController implements Initializable {
         chark.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.MEAT))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         page_label.setText("Chark");
         setItemsFlow();
 
@@ -306,7 +348,7 @@ public class ImatMainController implements Initializable {
         godis.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.SWEET))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         page_label.setText("Godis");
         setItemsFlow();
 
@@ -322,7 +364,7 @@ public class ImatMainController implements Initializable {
         mejeri.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.DAIRIES))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         page_label.setText("Mejeri");
         setItemsFlow();
     }
@@ -337,7 +379,7 @@ public class ImatMainController implements Initializable {
         kryddor.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HERB))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         page_label.setText("Kryddor");
         setItemsFlow();
     }
@@ -354,9 +396,9 @@ public class ImatMainController implements Initializable {
 
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
         page_label.setText("Dryck");
         setItemsFlow();
     }
@@ -371,14 +413,18 @@ public class ImatMainController implements Initializable {
         setAllButtonsBlue();
         page_label.setText("söker...");
         flowPane.getChildren().clear();
-        for (Product p : iMatDataHandler.findProducts(searchFilter.getText())){
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));}
-        if(flowPane.getChildren().isEmpty()){
+        for (Product p : iMatDataHandler.findProducts(searchFilter.getText())) {
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false));
+        }
+        if (flowPane.getChildren().isEmpty()) {
             page_label.setText("Hittade inga varor.. ");
 
         }
         setItemsFlow();
     }
+
+    Order currO;
+    historikCardsController historikCardsController;
 
     @FXML
     public void setHistorikCards() {
@@ -437,50 +483,56 @@ public class ImatMainController implements Initializable {
         favoritButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
         favoritIcon.setImage(new Image("/pic/starwhite.png"));
         for (Product p : iMatDataHandler.favorites()) {
-            itemsCardsController = new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false);
+            itemsCardsController = new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false);
             itemsCardsController.favorit.setImage(new Image("pic/star (1).png"));
             flowPane.getChildren().add(itemsCardsController);
 
         }
         setItemsFlow();
     }
-@FXML
-    private void plusAntal(){
+
+    @FXML
+    private void plusAntal() {
         antalInt++;
-    antalLabel.setText(antalInt+"");
+        antalLabel.setText(antalInt + "");
     }
 
     @FXML
-    private void minusAntal(){
-        if(antalInt>0) {
+    private void minusAntal() {
+        if (antalInt > 0) {
             antalInt--;
             antalLabel.setText(antalInt + "");
         }
     }
 
     @FXML
-    private void changeName(){
+    private void changeName() {
 
-    }
-    @FXML
-    private void changeLastName(){
-
-    }
-    @FXML
-    private void changeTelefonNummer(){
-    }
-    @FXML
-    private void changeEmail(){
-    }
-    @FXML
-    private void changeAdress(){
-    }
-    @FXML
-    private void changePostNummer(){
     }
 
     @FXML
-    private  void setHome(){
+    private void changeLastName() {
+
+    }
+
+    @FXML
+    private void changeTelefonNummer() {
+    }
+
+    @FXML
+    private void changeEmail() {
+    }
+
+    @FXML
+    private void changeAdress() {
+    }
+
+    @FXML
+    private void changePostNummer() {
+    }
+
+    @FXML
+    private void setHome() {
         antal.setVisible(false);
 
         setAllButtonsBlue();
@@ -490,23 +542,27 @@ public class ImatMainController implements Initializable {
         startFlow.getChildren().clear();
         ItemsCardsController itemsCardsController;
         for (Product p : iMatDataHandler.favorites()) {
-            itemsCardsController = new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false);
+            itemsCardsController = new ItemsCardsController(iMatDataHandler, this, p.getProductId(), false);
             itemsCardsController.favorit.setImage(new Image("pic/star (1).png"));
             startFlow.getChildren().add(itemsCardsController);
 
         }
-        if(iMatDataHandler.favorites().size()==0) {ingaFav.setVisible(true); }
-        else ingaFav.setVisible(false);
+        if (iMatDataHandler.favorites().size() == 0) {
+            ingaFav.setVisible(true);
+        } else ingaFav.setVisible(false);
         homeAnchor.toFront();
     }
+
     @FXML
-    private  void setItemsFlow(){
+    private void setItemsFlow() {
         itemsAnchor.toFront();
-    };
+    }
+
+    ;
 
 
     @FXML
-    private void updateKontoInfo(){
+    private void updateKontoInfo() {
 
         namnKonto.setText(iMatDataHandler.getCustomer().getFirstName());
         efterNamnKonto.setText(iMatDataHandler.getCustomer().getLastName());
@@ -515,11 +571,11 @@ public class ImatMainController implements Initializable {
         adressKonto.setText(iMatDataHandler.getCustomer().getAddress());
         postnummerKonto.setText(iMatDataHandler.getCustomer().getPostCode());
 
-        cvvKonto.setText(iMatDataHandler.getCreditCard().getVerificationCode()+"");
+        cvvKonto.setText(iMatDataHandler.getCreditCard().getVerificationCode() + "");
         kortnummerKonto.setText(iMatDataHandler.getCreditCard().getCardNumber());
         korthållareKonto.setText(iMatDataHandler.getCreditCard().getHoldersName());
-        giltigTillMonthKonto.setText(iMatDataHandler.getCreditCard().getValidMonth()+"");
-        giltigTillYearKonto.setText(iMatDataHandler.getCreditCard().getValidYear()+"");
+        giltigTillMonthKonto.setText(iMatDataHandler.getCreditCard().getValidMonth() + "");
+        giltigTillYearKonto.setText(iMatDataHandler.getCreditCard().getValidYear() + "");
 
         kontoUppgifterScen.toFront();
 
@@ -527,8 +583,8 @@ public class ImatMainController implements Initializable {
         //giltigError.setText("");
         //cvvError.setText("");
         korthållareKonto.setText(iMatDataHandler.getCreditCard().getHoldersName());
-        giltigTillMonthKonto.setText(iMatDataHandler.getCreditCard().getValidMonth()+"");
-        giltigTillYearKonto.setText(iMatDataHandler.getCreditCard().getValidYear()+"");
+        giltigTillMonthKonto.setText(iMatDataHandler.getCreditCard().getValidMonth() + "");
+        giltigTillYearKonto.setText(iMatDataHandler.getCreditCard().getValidYear() + "");
 
 
     }
@@ -537,7 +593,7 @@ public class ImatMainController implements Initializable {
         sparadLabel.setVisible(false);
     }
 
-    public void saveKonto(){
+    public void saveKonto() {
         kontoUppgifterScen.toFront();
 
         iMatDataHandler.getCustomer().setFirstName(namnKonto.getText());
@@ -549,33 +605,28 @@ public class ImatMainController implements Initializable {
         iMatDataHandler.getCustomer().setPostCode(postnummerKonto.getText());
 
 
-
         iMatDataHandler.getCreditCard().setCardNumber(kortnummerKonto.getText());
         iMatDataHandler.getCreditCard().setHoldersName(korthållareKonto.getText());
         try {
             iMatDataHandler.getCreditCard().setValidYear(Integer.parseInt(giltigTillYearKonto.getText()));
             iMatDataHandler.getCreditCard().setValidMonth(Integer.parseInt(giltigTillMonthKonto.getText()));
 
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             updateKontoInfo();
-           giltigError.setText("Ogiltig input, skriv gärna giltighetsdatum med siffror");
+            giltigError.setText("Ogiltig input, skriv gärna giltighetsdatum med siffror");
         }
 
         try {
-            iMatDataHandler.getCreditCard().setVerificationCode(Integer.parseInt(cvvKonto.getText()));;
-        }
-        catch (NumberFormatException e) {
+            iMatDataHandler.getCreditCard().setVerificationCode(Integer.parseInt(cvvKonto.getText()));
+            ;
+        } catch (NumberFormatException e) {
             updateKontoInfo();
-           cvvError.setText("Ogiltig input, skriv gärna CVV med siffror");
+            cvvError.setText("Ogiltig input, skriv gärna CVV med siffror");
         }
         sparadLabel.setVisible(true);
         updateKontoInfo();
 
     }
-
-
-
 
 
     public void getPayScen(Event event) {
@@ -592,12 +643,13 @@ public class ImatMainController implements Initializable {
         betCardYear.setText(String.valueOf(iMatDataHandler.getCreditCard().getValidYear()));
         betCVV.setText(String.valueOf(iMatDataHandler.getCreditCard().getVerificationCode()));
         betCardHolder.setText(iMatDataHandler.getCreditCard().getHoldersName());
+        ShoppingCartItem shoppingCartItem;
 
         flowpay.getChildren().clear();
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
-            flowpay.getChildren().add(new ShoppingCartItem(
-                    iMatDataHandler, this, s.getProduct().getProductId(),s));
-
+            flowpay.getChildren().add(shoppingCartItem = new ShoppingCartItem(
+                    iMatDataHandler, this, s.getProduct().getProductId(), s));
+            shoppingCartItem.Betalasida();
         }
 
         pricetot.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
@@ -610,7 +662,7 @@ public class ImatMainController implements Initializable {
         betalaLabel.setVisible(true);
         totPriceVaro.setVisible(true);
         tömmaVarukorgen.setVisible(true);
-        totPriceVaro.setText(iMatDataHandler.getShoppingCart().getTotal()+ " kr");
+        totPriceVaro.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
         ShoppingCartItem shoppingCartItem;
         antal.setVisible(true);
         flowPane.getChildren().clear();
@@ -620,16 +672,19 @@ public class ImatMainController implements Initializable {
 
         page_label.setText("Varukorg");
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
-            flowPane.getChildren().add(shoppingCartItem=new ShoppingCartItem(
-                    iMatDataHandler, this, s.getProduct().getProductId(),s));
-            shoppingCartItem.amount.setText(+(int)(s.getAmount())+" st");
-            shoppingCartItem.totPris.setText(s.getTotal()+" kr");
+            flowPane.getChildren().add(shoppingCartItem = new ShoppingCartItem(
+                    iMatDataHandler, this, s.getProduct().getProductId(), s));
+            //shoppingCartItem.amount.setText(+(int)(s.getAmount())+ " " + shoppingCartItem.iMatDataHandler.);
+            shoppingCartItem.setAmountLabel(s);
+            shoppingCartItem.totPris.setText(s.getTotal() + " kr");
+            shoppingCartItem.Varukorg();
 
         }
-       setItemsFlow();
+        setItemsFlow();
     }
 
-    @FXML public void placeNow(){
+    @FXML
+    public void placeNow() {
         iMatDataHandler.placeOrder();
         flowPane.getChildren().clear();
         bekraftelse.toFront();
@@ -637,7 +692,7 @@ public class ImatMainController implements Initializable {
     }
 
 
-@FXML public void setHistoDet(Order order, double price){
+/*@FXML public void setHistoDet(Order order, double price){
     SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
 
         histoFlow.getChildren().clear();
@@ -648,27 +703,88 @@ public class ImatMainController implements Initializable {
         orderNummerDet.setText(order.getOrderNumber()+"");
         datumDet.setText(formatter.format(order.getDate()));
         totPrisDet.setText(price+"");
-}
 
-@FXML
-public void setHistDetBack(){
+}*/
+
+    @FXML
+    public void setHistoDet(Order order, double price) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        ShoppingCartItem shoppingCartItem;
+        histoFlow.getChildren().clear();
+        histoDet.toFront();
+        for (ShoppingItem s : order.getItems()) {
+            histoFlow.getChildren().add(shoppingCartItem = new ShoppingCartItem(iMatDataHandler, this, s.getProduct().getProductId(), s));
+            shoppingCartItem.Betalasida();
+        }
+        orderNummerDet.setText(order.getOrderNumber() + "");
+        datumDet.setText(formatter.format(order.getDate()));
+        totPrisDet.setText(price + "");
+        currO = order;
+        orderToCartLabel.setVisible(true);
+
+    }
+
+    @FXML
+    public void setHistDetBack() {
         histoDet.toBack();
 
-}
+    }
 
-@FXML
-    public  void infoScenToBack(){
+    @FXML
+    public void infoScenToBack() {
         infoScen.toBack();
-}
+    }
 
-@FXML
-    public void emptyCart(){
+    @FXML
+    public void emptyCart() {
         iMatDataHandler.getShoppingCart().clear();
         flowPane.getChildren().clear();
-}
+    }
+
+    public boolean isAlreadyInCart(int id) {
+        boolean there = false;
+        for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
+            if (shoppingItem.getProduct().equals(iMatDataHandler.getProduct(id))) {
+                there = true;
+            }
+
+        }
+        return there;
 
 
+    }
+
+    public ShoppingItem getShoppingItem(int id){
+        ShoppingItem item=null;
+        for(ShoppingItem shoppingItem: iMatDataHandler.getShoppingCart().getItems()){
+            if(shoppingItem.getProduct().equals(iMatDataHandler.getProduct(id))) {
+                item =shoppingItem;
+            }
+
+        }
+        return item;
+
+    }
+
+    @FXML
+    Button orderToCartLabel;
+
+    @FXML
+    public void orderToCart() {
+
+        for (ShoppingItem s : currO.getItems()) {
+            if (isAlreadyInCart(s.getProduct().getProductId())) {
+                getShoppingItem(s.getProduct().getProductId()).setAmount(getShoppingItem(s.getProduct().getProductId()).getAmount() + 1);
+            } else {
+                iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(s.getProduct().getProductId()));
+
+            }
+        }
 
 
+            orderToCartLabel.setVisible(false);
+            totPriceMain.setText(String.valueOf(iMatDataHandler.getShoppingCart().getTotal()));
+        }
 
-}
+
+    }
