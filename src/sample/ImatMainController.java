@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Circle;
 import se.chalmers.cse.dat216.project.*;
 
 
@@ -177,10 +178,21 @@ public class ImatMainController implements Initializable {
     @FXML RadioButton VISAButton;
     @FXML RadioButton MCButton;
 
+    @FXML TextField betName;
+    @FXML TextField betLastName;
+    @FXML TextField betSecnum;
+    @FXML TextField betPhonenum;
+    @FXML TextField betEmail;
+    @FXML TextField betAdress;
+    @FXML TextField betPostcode;
+    @FXML TextField betCardtype;
+    @FXML TextField betCardnum;
+    @FXML TextField betCardDate;
+    @FXML TextField betCardYear;
+    @FXML TextField betCVV;
+    @FXML TextField betCardHolder;
 
-
-
-
+    @FXML Circle priceCounterCircle;
 
 
 
@@ -199,6 +211,8 @@ public class ImatMainController implements Initializable {
         setHome();
 
         ToggleGroup cardTypeButtons = new ToggleGroup();
+
+        totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal()+ " kr");
 
         VISAButton.setToggleGroup(cardTypeButtons);
         MCButton.setToggleGroup(cardTypeButtons);
@@ -335,7 +349,9 @@ public class ImatMainController implements Initializable {
         totPriceVaro.setVisible(false);
         tömmaVarukorgen.setVisible(false);
         setAllButtonsBlue();
+        //dryckButton.getStyleClass().add("redbuttons");
         dryckButton.setStyle("-fx-background-color: #1B4378; -fx-text-fill: #FAFAFA");
+
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId(),false));
@@ -402,6 +418,8 @@ public class ImatMainController implements Initializable {
         kryddor.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         godis.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
         dryckButton.setStyle("-fx-background-color: #5697ef; -fx-text-fill: #000000");
+
+        //dryckButton.getStyleClass().remove("redbuttons");
     }
 
 
@@ -562,6 +580,18 @@ public class ImatMainController implements Initializable {
 
     public void getPayScen(Event event) {
         payscen.toFront();
+        betName.setText(iMatDataHandler.getCustomer().getFirstName());
+        betLastName.setText(iMatDataHandler.getCustomer().getLastName());
+        //betSecnum.setText(iMatDataHandler.getCustomer().get);
+        betPhonenum.setText(iMatDataHandler.getCustomer().getPhoneNumber());
+        betEmail.setText(iMatDataHandler.getCustomer().getEmail());
+        betAdress.setText(iMatDataHandler.getCustomer().getAddress());
+        betPostcode.setText(iMatDataHandler.getCustomer().getPostCode());
+        betCardnum.setText(iMatDataHandler.getCreditCard().getCardNumber());
+        betCardDate.setText(String.valueOf(iMatDataHandler.getCreditCard().getValidMonth()));
+        betCardYear.setText(String.valueOf(iMatDataHandler.getCreditCard().getValidYear()));
+        betCVV.setText(String.valueOf(iMatDataHandler.getCreditCard().getVerificationCode()));
+        betCardHolder.setText(iMatDataHandler.getCreditCard().getHoldersName());
 
         flowpay.getChildren().clear();
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
@@ -603,6 +633,7 @@ public class ImatMainController implements Initializable {
         iMatDataHandler.placeOrder();
         flowPane.getChildren().clear();
         bekraftelse.toFront();
+        totPriceMain.setText("0.0 kr");
     }
 
 

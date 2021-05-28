@@ -22,3 +22,16 @@
     -fx-background-color: #FFFFFF;
 
 }
+
+#blueButtons:hover {
+    -fx-background-color: #00ff00;
+
+}
+
+#blueButtons {
+    -fx-background-color: #5697ef;
+}
+
+.redbuttons {
+    -fx-background-color: #ff0000;
+}
