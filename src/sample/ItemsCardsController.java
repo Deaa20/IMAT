@@ -107,6 +107,12 @@ public class ItemsCardsController extends AnchorPane {
             ecoImage.setImage(new Image("pic/eco.png"));
         }
 
+        if(isThere()){
+            addTo.setVisible(false);
+            antalLabel.setText((int)getShopingitem().getAmount()+" "+iMatDataHandler.getProduct(id).getUnitSuffix());
+        }
+        else{addTo.setVisible(true);}
+
 
 
 

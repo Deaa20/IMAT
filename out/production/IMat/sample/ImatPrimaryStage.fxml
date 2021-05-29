@@ -9,6 +9,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,9 +22,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
+<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
-      <StackPane prefHeight="745.0" prefWidth="1188.0">
+      <StackPane>
          <children>
             <AnchorPane fx:id="kontoUppgifterScen" prefHeight="742.0" prefWidth="1191.0">
                <children>
@@ -231,7 +232,7 @@
                <children>
                   <AnchorPane layoutX="105.0" layoutY="102.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum">
+                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum:">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -251,7 +252,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="23.0" layoutY="11.0" text="Order Nummer">
+                        <Label layoutX="23.0" layoutY="11.0" text="Ordernummer:">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -271,6 +272,19 @@
                               <Image url="@../pic/Close-512.png" />
                            </image>
                         </ImageView>
+                        <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" style="-fx-background-color: #5BE972;" text="Tillagd!">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="orderToCartLabel" layoutX="23.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#orderToCart" style="-fx-background-color: #5697EF;" text="Lägg till order i varukorgen">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>
@@ -372,7 +386,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="28.0" onMouseClicked="#setCartCards" prefHeight="20.0" prefWidth="57.0" text="000.00kr" textAlignment="CENTER">
+                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="28.0" onMouseClicked="#setCartCards" prefHeight="20.0" prefWidth="57.0" text="00.00kr" textAlignment="CENTER">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -384,46 +398,6 @@
                   </AnchorPane>
                   <StackPane prefHeight="150.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane fx:id="bekraftelse" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-                           <children>
-                              <Label layoutX="185.0" layoutY="86.0" text="Din beställning är lagd!">
-                                 <font>
-                                    <Font name="System Bold" size="48.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" layoutX="182.0" layoutY="186.0" prefHeight="106.0" prefWidth="806.0" text="Dina varor kommer fredag den 28:de maj mellan klockan 17-22" wrapText="true">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="182.0" layoutY="325.0" text="Vi har skickat en bekräftelse till din mail.">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="182.0" layoutY="418.0" prefHeight="113.0" prefWidth="806.0" text="Tack för att du handlat genom iMat och välkommen åter!" wrapText="true">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="homeButton1" alignment="BASELINE_LEFT" layoutX="852.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#getMainScen" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
-                                 <font>
-                                    <Font name="Arial Bold" size="21.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                              <ImageView fx:id="homeIcon1" fitHeight="26.0" fitWidth="27.0" layoutX="940.0" layoutY="573.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../pic/home.png" />
-                                 </image>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane fx:id="payscen" prefHeight="656.0" prefWidth="1191.0" style="-fx-background-color: #000000;">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
@@ -676,6 +650,46 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
+                        <AnchorPane fx:id="bekraftelse" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <Label layoutX="185.0" layoutY="86.0" text="Din beställning är lagd!">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="182.0" layoutY="186.0" prefHeight="106.0" prefWidth="806.0" text="Dina varor kommer fredag den 28:de maj mellan klockan 17-22" wrapText="true">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="182.0" layoutY="325.0" text="Vi har skickat en bekräftelse till din mail.">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="182.0" layoutY="418.0" prefHeight="113.0" prefWidth="806.0" text="Tack för att du handlat genom iMat och välkommen åter!" wrapText="true">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="homeButton1" alignment="BASELINE_LEFT" layoutX="852.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#getMainScen" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #5697ef;" stylesheets="@button.css" text="Home">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fx:id="homeIcon1" fitHeight="26.0" fitWidth="27.0" layoutX="940.0" layoutY="573.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../pic/home.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
                         <SplitPane fx:id="categories" dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
                           <items>
                             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="662.0" prefWidth="183.0" style="-fx-background-color: #ffffff;" styleClass="background">
@@ -740,51 +754,16 @@
                               </AnchorPane>
                               <SplitPane dividerPositions="0.5" orientation="VERTICAL">
                                  <items>
-                                    <TextField fx:id="searchFilter" onKeyTyped="#setSearchFilter" prefHeight="34.0" prefWidth="758.0" promptText="Sök här...">
+                                    <TextField fx:id="searchFilter" onKeyTyped="#setSearchFilter" prefHeight="13.0" prefWidth="1020.0" promptText="Sök här...">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <effect>
-                                          <DropShadow offsetX="1.0" offsetY="1.0" spread="0.05" />
+                                          <InnerShadow height="12.97" radius="2.7425" width="0.0" />
                                        </effect>
                                     </TextField>
                                     <StackPane prefHeight="150.0" prefWidth="200.0">
                                        <children>
-                                        <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
-                                             <children>
-                                                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="6.0" layoutY="104.0" prefHeight="471.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="72.0" AnchorPane.topAnchor="104.0">
-                                                   <content>
-                                                      <FlowPane fx:id="flowPane" prefHeight="539.0" prefWidth="1003.0" />
-                                                   </content>
-                                                </ScrollPane>
-                                                <Label fx:id="page_label" layoutX="10.0" layoutY="60.0" prefHeight="43.0" prefWidth="277.0" text="Label">
-                                                   <font>
-                                                      <Font name="System Bold" size="26.0" />
-                                                   </font>
-                                                </Label>
-                                                <Button fx:id="betalaLabel" alignment="CENTER" layoutX="642.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="40.0" prefWidth="181.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
-                                                   <font>
-                                                      <Font name="Arial Bold" size="20.0" />
-                                                   </font>
-                                                   <cursor>
-                                                      <Cursor fx:constant="HAND" />
-                                                   </cursor>
-                                                </Button>
-                                                <Label fx:id="totPriceVaro" layoutX="864.0" layoutY="595.0" prefHeight="34.0" prefWidth="113.0" text="0.0 kr">
-                                                   <font>
-                                                      <Font name="Arial Bold" size="21.0" />
-                                                   </font>
-                                                </Label>
-                                                <Button fx:id="tömmaVarukorgen" alignment="CENTER" layoutX="15.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="40.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
-                                                   <font>
-                                                      <Font name="Arial Bold" size="18.0" />
-                                                   </font>
-                                                   <cursor>
-                                                      <Cursor fx:constant="HAND" />
-                                                   </cursor>
-                                                </Button>
-                                             </children>
-                                          </AnchorPane>
                                           <AnchorPane fx:id="homeAnchor" prefHeight="619.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
                                              <children>
                                                 <Label alignment="TOP_CENTER" layoutX="236.0" layoutY="4.0" prefHeight="42.0" prefWidth="489.0" text="Välkomen till IMAT">
@@ -825,6 +804,41 @@
                                                       <Font size="24.0" />
                                                    </font>
                                                 </Label>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane fx:id="itemsAnchor" minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1021.0" style="-fx-background-color: #ffffff;">
+                                             <children>
+                                                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="5.0" layoutY="58.0" prefHeight="471.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="118.0" AnchorPane.topAnchor="58.0">
+                                                   <content>
+                                                      <FlowPane fx:id="flowPane" prefHeight="539.0" prefWidth="1003.0" />
+                                                   </content>
+                                                </ScrollPane>
+                                                <Label fx:id="page_label" layoutX="9.0" layoutY="14.0" prefHeight="43.0" prefWidth="277.0" text="Label">
+                                                   <font>
+                                                      <Font name="System Bold" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="betalaLabel" alignment="CENTER" layoutX="641.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#getPayScen" prefHeight="40.0" prefWidth="181.0" style="-fx-background-color: #f48787;" stylesheets="@button.css" text="Betala">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                                <Label fx:id="totPriceVaro" layoutX="863.0" layoutY="549.0" prefHeight="34.0" prefWidth="113.0" text="0.0 kr">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="21.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="tömmaVarukorgen" alignment="CENTER" layoutX="14.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#emptyCart" prefHeight="40.0" prefWidth="197.0" style="-fx-background-color: #f48787;" text="Tömma varukorgen">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="18.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
                                              </children>
                                           </AnchorPane>
                                        </children>

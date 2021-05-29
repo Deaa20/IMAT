@@ -63,7 +63,7 @@ public class ShoppingCartItem extends AnchorPane {
 
         image.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         name.setText(iMatDataHandler.getProduct(id).getName());
-        ECOlabel.setImage(new Image("pic/eco.png"));
+      ECOlabel.setImage(new Image("pic/eco.png"));
         if (iMatDataHandler.getProduct(id).isEcological()){
             ECOlabel.setVisible(true);
         } else {
@@ -122,17 +122,20 @@ public class ShoppingCartItem extends AnchorPane {
         }
     }
 
-    @FXML public void setAmountLabel(ShoppingItem s){
-        amount.setText(s.getAmount() + " " + iMatDataHandler.getProduct(id).getUnitSuffix());
+    @FXML
+    public void setAmountLabel(ShoppingItem s){
+        amount.setText((int)s.getAmount() + " " + iMatDataHandler.getProduct(id).getUnitSuffix());
     }
 
-    @FXML public void Betalasida(){
+    @FXML
+    public void Betalasida(){
         minusImage.setVisible(false);
         plusImage.setVisible(false);
         papperskorg.setVisible(false);
     }
 
-    @FXML public void Varukorg(){
+    @FXML
+    public void Varukorg(){
         minusImage.setVisible(true);
         plusImage.setVisible(true);
         papperskorg.setVisible(true);

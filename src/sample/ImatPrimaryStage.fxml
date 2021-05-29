@@ -9,6 +9,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,7 +22,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
+<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
       <StackPane>
          <children>
@@ -385,7 +386,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="28.0" onMouseClicked="#setCartCards" prefHeight="20.0" prefWidth="57.0" text="000.00kr" textAlignment="CENTER">
+                        <Label fx:id="totPriceMain" alignment="CENTER" contentDisplay="CENTER" layoutX="944.0" layoutY="28.0" onMouseClicked="#setCartCards" prefHeight="20.0" prefWidth="57.0" text="00.00kr" textAlignment="CENTER">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -753,12 +754,12 @@
                               </AnchorPane>
                               <SplitPane dividerPositions="0.5" orientation="VERTICAL">
                                  <items>
-                                    <TextField fx:id="searchFilter" onKeyTyped="#setSearchFilter" prefHeight="34.0" prefWidth="758.0" promptText="Sök här...">
+                                    <TextField fx:id="searchFilter" onKeyTyped="#setSearchFilter" prefHeight="13.0" prefWidth="1020.0" promptText="Sök här...">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <effect>
-                                          <DropShadow offsetX="1.0" offsetY="1.0" spread="0.05" />
+                                          <InnerShadow height="12.97" radius="2.7425" width="0.0" />
                                        </effect>
                                     </TextField>
                                     <StackPane prefHeight="150.0" prefWidth="200.0">
