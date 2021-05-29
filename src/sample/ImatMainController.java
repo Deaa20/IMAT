@@ -603,7 +603,7 @@ public class ImatMainController implements Initializable {
         iMatDataHandler.getCustomer().setFirstName(namnKonto.getText());
         System.out.println(namnKonto.getText());
         iMatDataHandler.getCustomer().setLastName(efterNamnKonto.getText());
-        iMatDataHandler.getCustomer().setPhoneNumber(telefonnummerKonto.getText());
+        iMatDataHandler.getCustomer().setMobilePhoneNumber(telefonnummerKonto.getText());
         iMatDataHandler.getCustomer().setEmail(epostAdressKonto.getText());
         iMatDataHandler.getCustomer().setAddress(adressKonto.getText());
         iMatDataHandler.getCustomer().setPostCode(postnummerKonto.getText());
@@ -643,7 +643,7 @@ public class ImatMainController implements Initializable {
         betName.setText(iMatDataHandler.getCustomer().getFirstName());
         betLastName.setText(iMatDataHandler.getCustomer().getLastName());
         //betSecnum.setText(iMatDataHandler.getCustomer().get);
-        betPhonenum.setText(iMatDataHandler.getCustomer().getPhoneNumber());
+        betPhonenum.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
         betEmail.setText(iMatDataHandler.getCustomer().getEmail());
         betAdress.setText(iMatDataHandler.getCustomer().getAddress());
         betPostcode.setText(iMatDataHandler.getCustomer().getPostCode());
