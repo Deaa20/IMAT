@@ -203,11 +203,6 @@ public class ImatMainController implements Initializable {
     Label totPriceMain;
 
     @FXML
-    RadioButton VISAButton;
-    @FXML
-    RadioButton MCButton;
-
-    @FXML
     TextField betName;
     @FXML
     TextField betLastName;
@@ -252,12 +247,7 @@ public class ImatMainController implements Initializable {
         antalLabel.setText(antalInt + "");
         setHome();
 
-        ToggleGroup cardTypeButtons = new ToggleGroup();
-
         totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
-
-        VISAButton.setToggleGroup(cardTypeButtons);
-        MCButton.setToggleGroup(cardTypeButtons);
     }
 
     public void getInfoScen() {
