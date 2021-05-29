@@ -692,6 +692,7 @@ public class ImatMainController implements Initializable {
         setItemsFlow();
     }
 
+
     @FXML
     public void placeNow() {
         iMatDataHandler.placeOrder();
@@ -796,6 +797,99 @@ public class ImatMainController implements Initializable {
             orderToCartLabel.setVisible(false);
             totPriceMain.setText(String.valueOf(iMatDataHandler.getShoppingCart().getTotal()));
         }
+
+
+    ShoppingItem CurrVara;
+    Product product;
+    @FXML Button LaggTill;
+    @FXML
+    public void LaggTill() {
+        LaggTill.setVisible(false);
+        //   antalLabel.setText(getShopingitem().getAmount()+"");
+        // Product p = iMatDataHandler.getProduct(id);
+        Plusset();
+
+    }
+
+
+    public boolean FinnsDen(ShoppingItem ss){
+        boolean there=false;
+        for(ShoppingItem shoppingItem: iMatDataHandler.getShoppingCart().getItems()){
+            if(shoppingItem.getProduct().equals(ss.getProduct())) {
+                there = true;
+            }
+
+        }
+        return there;
+
+
+    }
+
+    @FXML
+    private void Plusset () {
+        if (CurrVara == null) {
+            iMatDataHandler.getShoppingCart().addProduct(product);
+            for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()){
+                if (s.getProduct().equals(product)){
+                    CurrVara = s;
+                }
+            }
+        } else {
+            if(FinnsDen(CurrVara)){
+                CurrVara.setAmount(CurrVara.getAmount()+1);
+            }
+        }
+
+        antalLabel.setText(String.valueOf(CurrVara.getAmount()));
+
+        /*System.out.println(CurrVara.getProduct());
+        if(FinnsDen(CurrVara)){
+            CurrVara.setAmount(CurrVara.getAmount()+1);
+        }
+        else {
+            //iMatDataHandler.getShoppingCart().addProduct(CurrVara.getProduct());
+
+        }*/
+
+        antalLabel.setText((int)CurrVara.getAmount() + " " + CurrVara.getProduct().getUnitSuffix());
+        totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
+        totPriceMain.setStyle("-fx-font-weight: 700");
+        PauseTransition pause = new PauseTransition(Duration.seconds(0.6));
+        pause.setOnFinished(event -> {
+            priceCounterCircle.setStyle("-fx-fill: #e2f1ff;");
+            totPriceMain.setStyle("-fx-font-weight: 500");
+        });
+        pause.play();
+    }
+
+    @FXML
+    private  void Minuset () {
+        if (CurrVara.getAmount() > 1) {
+            if(FinnsDen(CurrVara)){
+                CurrVara.setAmount(CurrVara.getAmount()-1);
+                antalLabel.setText((int)CurrVara.getAmount() + " " + CurrVara.getProduct().getUnitSuffix());
+                totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+                priceCounterCircle.setStyle("-fx-fill: #24ff3a;");
+                totPriceMain.setStyle("-fx-font-weight: 700");
+                PauseTransition pause = new PauseTransition(Duration.seconds(0.6));
+                pause.setOnFinished(event -> {
+                    priceCounterCircle.setStyle("-fx-fill: #e2f1ff;");
+                    totPriceMain.setStyle("-fx-font-weight: 500");
+                });
+                pause.play();
+            }
+        }
+        else{
+
+            iMatDataHandler.getShoppingCart().removeItem(CurrVara);
+            totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+            LaggTill.setVisible(true);
+            //  parentController.setCartCards();
+
+        }
+    }
 
 
     }

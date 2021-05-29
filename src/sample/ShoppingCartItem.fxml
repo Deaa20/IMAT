@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="86.0" prefWidth="1010.0" style="-fx-border-color: rgba(0,0,0,0.2);" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="86.0" prefWidth="1010.0" style="-fx-border-color: rgba(0,0,0,0.2);" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="image" fitHeight="72.0" fitWidth="118.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="name" layoutX="219.0" layoutY="30.0" text="Titel" wrapText="true">
@@ -34,7 +34,7 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <ImageView fx:id="papperskorg" fitHeight="40.0" fitWidth="38.0" layoutX="920.0" layoutY="20.0" onMouseClicked="#removeFromCart" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="papperskorg" fitHeight="40.0" fitWidth="38.0" layoutX="947.0" layoutY="23.0" onMouseClicked="#removeFromCart" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/trash.png" />
          </image>
@@ -46,7 +46,7 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <Label fx:id="totPris" layoutX="825.0" layoutY="30.0" prefHeight="27.0" prefWidth="82.0" text="Label">
+      <Label fx:id="totPris" layoutX="825.0" layoutY="30.0" prefHeight="30.0" prefWidth="110.0" text="Label">
          <font>
             <Font size="20.0" />
          </font></Label>

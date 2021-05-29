@@ -62,6 +62,7 @@ public class ItemsCardsController extends AnchorPane {
     @FXML ImageView removeItemCart;
 
    // int antalInt = 1;
+    ShoppingItem s;
 
 
 
@@ -141,7 +142,9 @@ public class ItemsCardsController extends AnchorPane {
         parentController.titel.setText(iMatDataHandler.getProduct(id).getName());
         parentController.antal.setDisable(false);
         parentController.antal.setVisible(true);
-
+        parentController.CurrVara = getShopingitem();
+        parentController.product = iMatDataHandler.getProduct(id);
+        parentController.LaggTill.setVisible(true);
     }
 
     @FXML
