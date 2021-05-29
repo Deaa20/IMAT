@@ -580,8 +580,8 @@ public class ImatMainController implements Initializable {
         kontoUppgifterScen.toFront();
 
 
-        //giltigError.setText("");
-        //cvvError.setText("");
+        giltigError.setVisible(false);
+        cvvError.setVisible(false);
         korthållareKonto.setText(iMatDataHandler.getCreditCard().getHoldersName());
         giltigTillMonthKonto.setText(iMatDataHandler.getCreditCard().getValidMonth() + "");
         giltigTillYearKonto.setText(iMatDataHandler.getCreditCard().getValidYear() + "");
@@ -594,6 +594,10 @@ public class ImatMainController implements Initializable {
     }
 
     public void saveKonto() {
+
+        giltigError.setVisible(false);
+        cvvError.setVisible(false);
+        sparadLabel.setVisible(false);
         kontoUppgifterScen.toFront();
 
         iMatDataHandler.getCustomer().setFirstName(namnKonto.getText());
@@ -612,16 +616,21 @@ public class ImatMainController implements Initializable {
             iMatDataHandler.getCreditCard().setValidMonth(Integer.parseInt(giltigTillMonthKonto.getText()));
 
         } catch (NumberFormatException e) {
-            updateKontoInfo();
-            giltigError.setText("Ogiltig input, skriv gärna giltighetsdatum med siffror");
+            System.out.println("hello there");
+
+            giltigError.setVisible(true);
+            return;
+
+            //updateKontoInfo();
         }
 
         try {
             iMatDataHandler.getCreditCard().setVerificationCode(Integer.parseInt(cvvKonto.getText()));
             ;
         } catch (NumberFormatException e) {
-            updateKontoInfo();
-            cvvError.setText("Ogiltig input, skriv gärna CVV med siffror");
+            cvvError.setVisible(true);
+            return;
+            //updateKontoInfo();
         }
         sparadLabel.setVisible(true);
         updateKontoInfo();

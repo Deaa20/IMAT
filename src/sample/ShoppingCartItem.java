@@ -70,7 +70,7 @@ public class ShoppingCartItem extends AnchorPane {
             ECOlabel.setVisible(false);
         }
 
-        price.setText(String.valueOf(s.getProduct().getPrice()) + " kr");
+        price.setText(String.valueOf(s.getProduct().getPrice()) + s.getProduct().getUnitSuffix());
         totPris.setText(s.getTotal()+" kr");
         amount.setText(String.valueOf(s.getAmount()) + " " + s.getProduct().getUnitSuffix());
 
@@ -78,7 +78,7 @@ public class ShoppingCartItem extends AnchorPane {
             if (shoppingItem.getProduct().equals(iMatDataHandler.getProduct(id))) {
                 System.out.println(shoppingItem.getAmount());
                 System.out.println(shoppingItem.getTotal() + "total");
-                price.setText((iMatDataHandler.getProduct(id).getPrice() + " kr"));
+                price.setText((iMatDataHandler.getProduct(id).getPrice() +" "+s.getProduct().getUnit()));
 
 
             }
