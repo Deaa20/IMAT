@@ -840,7 +840,7 @@ public class ImatMainController implements Initializable {
             }
         }
 
-        antalLabel.setText(String.valueOf(CurrVara.getAmount()));
+        //antalLabel.setText(String.valueOf((int) CurrVara.getAmount()));
 
         /*System.out.println(CurrVara.getProduct());
         if(FinnsDen(CurrVara)){

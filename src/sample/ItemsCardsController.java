@@ -144,7 +144,12 @@ public class ItemsCardsController extends AnchorPane {
         parentController.antal.setVisible(true);
         parentController.CurrVara = getShopingitem();
         parentController.product = iMatDataHandler.getProduct(id);
-        parentController.LaggTill.setVisible(true);
+        if (isThere()){
+            parentController.LaggTill.setVisible(false);
+            parentController.antalLabel.setText((int)getShopingitem().getAmount() + " " + getShopingitem().getProduct().getUnitSuffix());
+        } else {
+            parentController.LaggTill.setVisible(true);
+        }
     }
 
     @FXML
