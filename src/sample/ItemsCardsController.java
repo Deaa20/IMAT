@@ -236,7 +236,7 @@ public class ItemsCardsController extends AnchorPane {
 
         @FXML
         private void minusAntal () {
-            if (getShopingitem().getAmount() > 0) {
+            if (getShopingitem().getAmount() > 1) {
                 if(isThere()){
                     getShopingitem().setAmount(getShopingitem().getAmount()-1);
                     antalLabel.setText((int)getShopingitem().getAmount() + " " + getShopingitem().getProduct().getUnitSuffix());
@@ -250,7 +250,13 @@ public class ItemsCardsController extends AnchorPane {
                     });
                     pause.play();
                 }
+            }
+            else{
 
+                iMatDataHandler.getShoppingCart().removeItem(getShopingitem());
+                parentController.totPriceMain.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+                addTo.setVisible(true);
+              //  parentController.setCartCards();
 
             }
         }

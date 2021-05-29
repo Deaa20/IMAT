@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="86.0" prefWidth="1010.0" style="-fx-border-color: rgba(0,0,0,0.2);" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="86.0" prefWidth="1010.0" style="-fx-border-color: rgba(0,0,0,0.2);" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="image" fitHeight="72.0" fitWidth="118.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="name" layoutX="154.0" layoutY="11.0" prefHeight="65.0" prefWidth="203.0" text="Titel" wrapText="true">
+      <Label fx:id="name" layoutX="219.0" layoutY="30.0" text="Titel" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <ImageView fx:id="minusImage" fitHeight="27.0" fitWidth="27.0" layoutX="702.0" layoutY="30.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="minusImage" fitHeight="27.0" fitWidth="27.0" layoutX="645.0" layoutY="30.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/unknown44.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fx:id="plusImage" fitHeight="27.0" fitWidth="27.0" layoutX="769.0" layoutY="30.0" onMouseClicked="#plusAntal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/unknown.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <Label fx:id="price" layoutX="390.0" layoutY="18.0" prefHeight="51.0" prefWidth="67.0" text="Label">
+      <Label fx:id="price" layoutX="385.0" layoutY="30.0" text="Label">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="920.0" layoutY="20.0" onMouseClicked="#removeFromCart" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="papperskorg" fitHeight="40.0" fitWidth="38.0" layoutX="920.0" layoutY="20.0" onMouseClicked="#removeFromCart" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/trash.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <Label fx:id="amount" alignment="CENTER" layoutX="729.0" layoutY="24.0" prefHeight="38.0" prefWidth="38.0" text="1">
+      <Label fx:id="amount" alignment="CENTER" layoutX="679.0" layoutY="30.0" prefHeight="0.0" prefWidth="82.0" text="50.95 förp">
          <font>
             <Font size="18.0" />
          </font></Label>
@@ -40,5 +50,10 @@
          <font>
             <Font size="18.0" />
          </font></Label>
+      <ImageView fx:id="ECOlabel" fitHeight="51.0" fitWidth="82.0" layoutX="123.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/eco.png" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>
