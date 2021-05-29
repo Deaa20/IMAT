@@ -235,7 +235,7 @@ public class ItemsCardsController extends AnchorPane {
         }
 
         @FXML
-        private void minusAntal () {
+        private  void minusAntal () {
             if (getShopingitem().getAmount() > 1) {
                 if(isThere()){
                     getShopingitem().setAmount(getShopingitem().getAmount()-1);
