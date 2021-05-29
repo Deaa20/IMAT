@@ -26,6 +26,70 @@
    <children>
       <StackPane>
          <children>
+            <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
+               <children>
+                  <AnchorPane layoutX="105.0" layoutY="102.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="orderNummerDet" layoutX="199.0" layoutY="11.0" prefHeight="35.0" prefWidth="113.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="781.0" layoutY="517.0" text="Tot.Pris">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="datumDet" layoutX="429.0" layoutY="11.0" prefHeight="35.0" prefWidth="230.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="23.0" layoutY="11.0" text="Ordernummer:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totPrisDet" layoutX="893.0" layoutY="517.0" prefHeight="35.0" prefWidth="113.0" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane layoutX="4.0" layoutY="58.0" prefHeight="449.0" prefWidth="1018.0" vbarPolicy="NEVER">
+                           <content>
+                              <FlowPane fx:id="histoFlow" prefHeight="447.0" prefWidth="1011.0" />
+                           </content>
+                        </ScrollPane>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="968.0" layoutY="9.0" onMouseClicked="#setHistDetBack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" style="-fx-background-color: #5BE972;" text="Tillagd!">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="orderToCartLabel" layoutX="23.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#orderToCart" style="-fx-background-color: #5697EF;" text="Lägg till order i varukorgen">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="kontoUppgifterScen" prefHeight="742.0" prefWidth="1191.0">
                <children>
                   <AnchorPane layoutX="1.0" layoutY="-3.0" prefHeight="793.0" prefWidth="1193.0" style="-fx-background-color: #ffffff;">
@@ -191,67 +255,6 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="histoDet" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
-               <children>
-                  <AnchorPane layoutX="105.0" layoutY="102.0" prefHeight="567.0" prefWidth="1029.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <Label layoutX="312.0" layoutY="9.0" prefHeight="39.0" prefWidth="88.0" text="Datum:">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="orderNummerDet" layoutX="199.0" layoutY="11.0" prefHeight="35.0" prefWidth="113.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="781.0" layoutY="517.0" text="Tot.Pris">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="datumDet" layoutX="429.0" layoutY="11.0" prefHeight="35.0" prefWidth="230.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="23.0" layoutY="11.0" text="Ordernummer:">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="totPrisDet" layoutX="893.0" layoutY="517.0" prefHeight="35.0" prefWidth="113.0" text="Label">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <ScrollPane layoutX="4.0" layoutY="58.0" prefHeight="449.0" prefWidth="1018.0" vbarPolicy="NEVER">
-                           <content>
-                              <FlowPane fx:id="histoFlow" prefHeight="447.0" prefWidth="1011.0" />
-                           </content>
-                        </ScrollPane>
-                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="968.0" layoutY="9.0" onMouseClicked="#setHistDetBack" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/Close-512.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" style="-fx-background-color: #5BE972;" text="Tillagd!">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="orderToCartLabel" layoutX="23.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#orderToCart" style="-fx-background-color: #5697EF;" text="Lägg till order i varukorgen">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <AnchorPane layoutX="240.0" layoutY="136.0" prefHeight="449.0" prefWidth="741.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0">
@@ -285,6 +288,9 @@
                            <image>
                               <Image url="@../pic/Close-512.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <Button fx:id="LaggTill" layoutX="513.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#LaggTill" prefHeight="34.0" prefWidth="159.0" style="-fx-background-color: #5697ef;" text="Lägg till">
                            <font>

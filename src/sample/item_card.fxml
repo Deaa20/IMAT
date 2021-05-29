@@ -21,7 +21,7 @@
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font></Label>
-      <Button fx:id="merInfo" layoutX="198.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#infoHandler" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #5697EF;" text="Mer info">
+      <Button fx:id="merInfo" layoutX="183.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#infoHandler" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #5697EF;" text="Mer info">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -34,11 +34,11 @@
          </cursor>
       </ImageView>
       <ImageView fx:id="ecoImage" fitHeight="38.0" fitWidth="44.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="antalLabel" alignment="CENTER" layoutX="233.0" layoutY="208.0" prefHeight="27.0" prefWidth="38.0" text="0">
+      <Label fx:id="antalLabel" alignment="CENTER" layoutX="215.0" layoutY="208.0" prefHeight="27.0" prefWidth="63.0" text="0">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font></Label>
-      <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="198.0" layoutY="209.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="185.0" layoutY="208.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/unknown44.png" />
          </image>
@@ -54,7 +54,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Button fx:id="addTo" layoutX="198.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#addToCart" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #f48787;" text="Lägg till">
+      <Button fx:id="addTo" layoutX="182.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#addToCart" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: #f48787;" text="Lägg till">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
