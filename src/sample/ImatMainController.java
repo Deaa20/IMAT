@@ -603,7 +603,7 @@ public class ImatMainController implements Initializable {
         iMatDataHandler.getCustomer().setFirstName(namnKonto.getText());
         System.out.println(namnKonto.getText());
         iMatDataHandler.getCustomer().setLastName(efterNamnKonto.getText());
-        iMatDataHandler.getCustomer().setMobilePhoneNumber(telefonnummerKonto.getText());
+        iMatDataHandler.getCustomer().setPhoneNumber(telefonnummerKonto.getText());
         iMatDataHandler.getCustomer().setEmail(epostAdressKonto.getText());
         iMatDataHandler.getCustomer().setAddress(adressKonto.getText());
         iMatDataHandler.getCustomer().setPostCode(postnummerKonto.getText());
